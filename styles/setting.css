@@ -1,0 +1,104 @@
+.setting-sheet > .header .portrait {
+  height: 100px;
+  flex: 0 0 100px;
+}
+.setting-sheet > .header .portrait img {
+  border: 0;
+}
+.setting-sheet > .header .details {
+  padding: 0 5px;
+  flex: 1;
+}
+.setting-sheet > .header .details input {
+  font-size: 2em;
+  border: 0;
+  border-bottom: 2px groove #800;
+  margin-bottom: 4px;
+  border-radius: 0;
+  height: 1.25em;
+}
+.setting-sheet > .header .details textarea {
+  resize: none;
+  flex: 1 100%;
+}
+.setting-sheet > .lifepath-list .section-header {
+  background-color: unset;
+  font-size: 1.25em;
+  border-bottom: 2px solid black;
+  padding: 0 10px;
+  font-weight: bold;
+}
+.setting-sheet > .lifepath-list .section-header .title {
+  flex: 1 1 100px;
+  font-weight: bold;
+}
+.setting-sheet > .lifepath-list .section-header .years, .setting-sheet > .lifepath-list .section-header .resources, .setting-sheet > .lifepath-list .section-header .stat-boost {
+  flex: 0 0 60px;
+  text-align: center;
+}
+.setting-sheet > .lifepath-list .section-header .leads {
+  flex: 4;
+}
+.setting-sheet > .lifepath-list .section-header .fas {
+  flex: 0 0 20px;
+}
+.setting-sheet > .lifepath-list .lifepath {
+  margin-bottom: 3px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.setting-sheet > .lifepath-list .lifepath:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px groove #aaa;
+}
+.setting-sheet > .lifepath-list .lifepath .header {
+  width: 100%;
+  background-color: darkgrey;
+  font-size: 1.125em;
+  padding: 3px 10px;
+}
+.setting-sheet > .lifepath-list .lifepath .header .title {
+  flex: 1 1 100px;
+  font-weight: bold;
+}
+.setting-sheet > .lifepath-list .lifepath .header .years, .setting-sheet > .lifepath-list .lifepath .header .resources, .setting-sheet > .lifepath-list .lifepath .header .stat-boost {
+  flex: 0 0 60px;
+  text-align: center;
+}
+.setting-sheet > .lifepath-list .lifepath .header .leads {
+  flex: 4;
+  font-style: italic;
+}
+.setting-sheet > .lifepath-list .lifepath .header .fas {
+  flex: 0 0 20px;
+  line-height: 20px;
+  text-align: center;
+  margin-right: -5px;
+}
+.setting-sheet > .lifepath-list .lifepath .header .fas:hover {
+  color: #800;
+}
+.setting-sheet > .lifepath-list .lifepath .lifepath-detail {
+  margin-left: 20px;
+  font-size: 1.125em;
+  text-align: justify;
+}
+.setting-sheet > .lifepath-list .lifepath .lifepath-detail label {
+  margin-left: -5px;
+  font-weight: bold;
+  font-style: italic;
+}
+.setting-sheet > .lifepath-list .drop-area {
+  height: 0;
+  border-radius: 5px;
+  line-height: 2em;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.05), black, rgba(0, 0, 0, 0.05));
+  visibility: hidden;
+}
+.setting-sheet > .lifepath-list .drop-area.show-drop {
+  visibility: visible;
+  height: 6px;
+}

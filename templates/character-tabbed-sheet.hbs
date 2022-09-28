@@ -1,0 +1,71 @@
+<form autocomplete="off" class="character">
+    {{#if data.settings.showSettings}}
+    {{> "systems/burningwheel/templates/sections/character-settings.hbs"}}
+    {{/if}}
+    
+    {{> "systems/burningwheel/templates/sections/header.hbs"}}
+{{#if isObserver}}
+    {{!-- Character Tabs --}}
+    <nav class="tabs character-tabs" data-group="sheet-tabs">
+        <a class="item" data-tab="bits" data-group="sheet-tabs">BITs</a>
+        <a class="item" data-tab="social-and-notes" data-group="sheet-tabs">Social & Notes</a>
+        <a class="item" data-tab="stats-and-attributes" data-group="sheet-tabs">Stats & Attributes</a>
+        <a class="item" data-tab="skills-and-spells" data-group="sheet-tabs">Skills & Spells</a>
+        <a class="item" data-tab="gear-and-combat" data-group="sheet-tabs">Gear & Combat</a>
+    </nav>
+
+    <section class="content">
+        <div class="tab" data-tab="bits" data-group="sheet-tabs">
+            {{!-- Beliefs Sheet Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
+{{> "systems/burningwheel/templates/sections/beliefs.hbs"}}
+
+            {{!-- Instincts Sheet Section - funny indentation to avoid problems with textareas inserting extra whitespace.--}}
+{{> "systems/burningwheel/templates/sections/instincts.hbs"}}
+
+            {{!-- Traits Sheet Section --}}
+            {{> "systems/burningwheel/templates/sections/traits.hbs"}}
+        </div>
+
+        <div class="tab" data-tab="social-and-notes" data-group="sheet-tabs">
+            {{!-- Relationships Section --}}
+            {{> "systems/burningwheel/templates/sections/social.hbs"}}
+        
+            {{!-- Misc Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
+{{> "systems/burningwheel/templates/sections/misc.hbs"}}
+        </div>
+
+        <div class="tab" data-tab="stats-and-attributes" data-group="sheet-tabs">
+            {{!-- Stats Section --}}
+            {{> "systems/burningwheel/templates/sections/stats.hbs"}}
+
+            {{!-- Attributes Section --}}
+            {{> "systems/burningwheel/templates/sections/attributes.hbs"}}
+        </div>
+
+        <div class="tab" data-tab="skills-and-spells" data-group="sheet-tabs">
+            {{!-- Skills Section --}}
+            {{> "systems/burningwheel/templates/sections/skills.hbs"}}
+
+            {{!-- Learning Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
+{{> "systems/burningwheel/templates/sections/learning.hbs"}}
+
+            {{!-- Spells Section --}}
+{{> "systems/burningwheel/templates/sections/spells.hbs"}}
+        </div>
+
+        <div class="tab" data-tab="gear-and-combat" data-group="sheet-tabs" >
+            {{!-- Gear section --}}
+            {{> "systems/burningwheel/templates/sections/gear.hbs"}}
+            
+            {{!-- PTGS section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
+{{> "systems/burningwheel/templates/sections/ptgs.hbs"}}
+
+            {{!-- Weapons and Armor Section --}}
+            {{> "systems/burningwheel/templates/sections/weapons-and-armor.hbs"}}
+
+        </div>
+    </section>
+{{/if}}
+    <hr>
+    {{> "systems/burningwheel/templates/sections/footer.hbs"}}
+</form>

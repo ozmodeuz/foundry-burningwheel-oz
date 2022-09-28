@@ -1,0 +1,143 @@
+.relationship-section h2 > i {
+  font-size: 0.75em;
+}
+.relationship-section h2 > i:hover {
+  color: red;
+}
+.relationship-section .item-title {
+  flex: 1 1;
+}
+.relationship-section .item-title ~ button.rollable {
+  flex: 0 0 2em;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  margin: 0 0 0 5px;
+  border-radius: 1em;
+}
+.relationship-section .item-title ~ i {
+  flex: 0 0 1em;
+  margin: 0 0 0 5px;
+  align-self: center;
+}
+.relationship-section .relationship > i, .relationship-section .reputation > i, .relationship-section .affiliation > i {
+  width: 18px;
+}
+.relationship-section .relationship > i:hover, .relationship-section .reputation > i:hover, .relationship-section .affiliation > i:hover {
+  color: red;
+}
+.relationship-section .relationships {
+  width: 40%;
+}
+.relationship-section .relationships .relationship-hostile {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(255, 0, 0, 0.075);
+}
+.relationship-section .relationships .relationship-hostile:hover {
+  background-color: rgba(255, 0, 0, 0.15);
+}
+.relationship-section .relationships .relationship-friendly {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 128, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 128, 0, 0.075);
+}
+.relationship-section .relationships .relationship-friendly:hover {
+  background-color: rgba(0, 128, 0, 0.15);
+}
+.relationship-section .relationships .relationship-neutral {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.relationship-section .relationships .relationship-neutral:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.relationship-section .reputations, .relationship-section .affiliations {
+  width: 30%;
+}
+.relationship-section .reputations .reputation.reputation-infamous, .relationship-section .affiliations .reputation.reputation-infamous {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(255, 0, 0, 0.075);
+}
+.relationship-section .reputations .reputation.reputation-infamous:hover, .relationship-section .affiliations .reputation.reputation-infamous:hover {
+  background-color: rgba(255, 0, 0, 0.15);
+}
+.relationship-section .reputations .reputation.reputation-famous, .relationship-section .affiliations .reputation.reputation-famous {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 128, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 128, 0, 0.075);
+}
+.relationship-section .reputations .reputation.reputation-famous:hover, .relationship-section .affiliations .reputation.reputation-famous:hover {
+  background-color: rgba(0, 128, 0, 0.15);
+}
+.relationship-section .reputations .affiliation, .relationship-section .affiliations .affiliation {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 165, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(255, 165, 0, 0.075);
+}
+.relationship-section .reputations .affiliation:hover, .relationship-section .affiliations .affiliation:hover {
+  background-color: rgba(255, 165, 0, 0.15);
+}
+.relationship-section .relationship-progress {
+  flex: 0 0 100%;
+  display: flex;
+}
+.relationship-section .relationship-progress label.progress-clear {
+  display: block;
+  color: transparent;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  text-align: center;
+  margin-left: calc(15px/5);
+}
+.relationship-section .relationship-progress label.progress-clear:hover {
+  color: red;
+}
+.relationship-section .relationship-progress input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+.relationship-section .relationship-progress input[type=radio]:checked ~ label.progress-tick {
+  background-color: white;
+}
+.relationship-section .relationship-progress input[type=radio]:checked ~ label.progress-tick:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.relationship-section .relationship-progress input[type=radio]:checked + label.progress-tick {
+  background-color: #333333;
+}
+.relationship-section .relationship-progress input[type=radio]:disabled ~ label.progress-tick {
+  pointer-events: none;
+  opacity: 25%;
+}
+.relationship-section .relationship-progress label.progress-tick {
+  display: block;
+  background-color: #333333;
+  border: 1px solid black;
+  border-radius: calc(15px/2);
+  width: 15px;
+  height: 15px;
+  margin-left: calc(15px/5);
+  margin-top: 1px;
+}

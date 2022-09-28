@@ -1,0 +1,305 @@
+<form class="flex-row" autocomplete="off">
+    {{#if gmView}}
+    <div class="control-grid">
+        <button type="button" class="control-button" data-action="clearAll">Clear All</button>
+        <button type="button" class="control-button" data-action="resetRound">Reset Round</button>
+    </div>
+    {{/if}}
+    <div class="volley-description">
+        {{#if gmView}}
+        <div class="fighters-label">Fighters</div>
+        <div class="pill-toggle">
+            <input type="checkbox" name="showV1" id="showFightV1" {{checked showV1}}>
+            <label for="showFightV1">Show Volley 1</label>
+        </div>
+        <div class="pill-toggle">
+            <input type="checkbox" name="showV2" id="showFightV2" {{checked showV2}}>
+            <label for="showFightV2">Show Volley 2</label>
+        </div>
+        <div class="pill-toggle">
+            <input type="checkbox" name="showV3" id="showFightV3" {{checked showV3}}>
+            <label for="showFightV3">Show Volley 3</label>
+        </div>
+        {{else}}
+        <div class="fighters-label">Fighters</div><div>Volley 1</div><div>Volley 2</div><div>Volley 3</div>
+        {{/if}}
+        {{#each participants as |p i|}}
+        <div class="volley-buttons flex-row">
+            <div class="participant">{{p.name}}</div>
+            <div class="portrait-actions flex-row">
+                {{#if p.showActions}}
+                    <img class="portrait clickable" src="{{p.imgSrc}}" title="{{p.name}}" data-action="openSheet" data-actor-id="{{p.id}}"/>
+                    <div class="fight-rolls flex-column">
+                        <button type="button" class="control-button" data-index="{{i}}" data-action="rollSpeed">Speed</button>
+                        <button type="button" class="control-button" data-index="{{i}}" data-action="rollPower">Power</button>
+                        <button type="button" class="control-button" data-index="{{i}}" data-action="rollAgility">Agility</button>
+                        <button type="button" class="control-button" data-index="{{i}}" data-action="rollSkill">Skill</button>
+                        <button type="button" class="control-button" data-index="{{i}}" data-action="rollSteel">Steel</button>
+                    </div>
+                {{else}}
+                    {{#if ../gmView}}
+                        <div class="details clickable" data-action="openSheet" title="{{p.name}}" data-actor-id="{{p.id}}">
+                            <div class="details-key">Reflexes</div> 
+                            <div class="details-value">{{p.reflexes}}</div>
+                            <div class="details-key">Engagement</div>
+                            <div class="details-value">
+                                <div>+{{p.engagementBonus}}D</div>
+                            </div>
+                            <div class="details-key">Position</div>
+                            <div class="details-value">
+                                <div class=>+{{p.positionPenalty}}Ob</div>
+                            </div>
+                        </div>
+                        <div class="weapon-block">
+                            <div>Weapon</div>
+                            <div class="weapon-picker">{{p.chosenWeaponLabel}}</div>
+                        </div>
+                    {{else}}
+                        <img class="portrait" src="{{p.imgSrc}}" title="{{p.name}}"/>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+        <div class="flex-row" lang="en">
+            {{#if ../showV1}}
+            <div class="attack-action action-card">{{#if p.action1}}{{{p.action1}}}{{else}}Does Nothing{{/if}}</div>
+            {{#if p.action2}}<div class="attack-action action-card">{{{p.action2}}}</div>{{/if}}
+            {{#if p.action3}}<div class="attack-action action-card">{{{p.action3}}}</div>{{/if}}
+            {{else}}<div class="attack-action card-back"><i class='fas fa-dharmachakra'></i></div>
+            {{/if}}
+        </div>
+        <div class="flex-row" lang="en">
+            {{#if ../showV2}}
+            <div class="attack-action action-card">{{#if p.action4}}{{{p.action4}}}{{else}}Does Nothing{{/if}}</div>
+            {{#if p.action5}}<div class="attack-action action-card">{{{p.action5}}}</div>{{/if}}
+            {{#if p.action6}}<div class="attack-action action-card">{{{p.action6}}}</div>{{/if}}
+            {{else}}<div class="attack-action card-back"><i class='fas fa-dharmachakra'></i></div>
+            {{/if}}
+        </div>
+        <div class="flex-row" lang="en">
+            {{#if ../showV3}}
+            <div class="attack-action action-card">{{#if p.action7}}{{{p.action7}}}{{else}}Does Nothing{{/if}}</div>
+            {{#if p.action8}}<div class="attack-action action-card">{{{p.action8}}}</div>{{/if}}
+            {{#if p.action9}}<div class="attack-action action-card">{{{p.action9}}}</div>{{/if}}
+            {{else}}<div class="attack-action card-back"><i class='fas fa-dharmachakra'></i></div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="fighters-grid">
+        <div class="participant-card volley">
+            Participant
+        </div>
+        <div class="volley">
+            Volley 1
+        </div>
+        <div class="volley">
+            Volley 2
+        </div>
+        <div class="volley">
+            Volley 3
+        </div>
+        {{#each participants as |p i|}}
+        <div class="participant-card">
+            <div class="flex-row">
+                {{#if ../gmView}}
+                <i data-action="removeFighter" data-index="{{i}}" class="fas fa-times remove-fighter"></i>
+                {{/if}}
+                <div class="actor-name clickable" data-action="toggleHidden" data-index="{{i}}">{{p.name}}</div>
+                {{#if ../gmView}}<div class="remove-fighter"></div>{{/if}}
+            </div>
+            {{#if p.showActions}}
+            <div class="details">
+                <div class="details-key">Reflexes</div>
+                <div class="details-value">{{p.reflexes}}</div>
+                <div class="details-key">Engagement</div>
+                <div class="details-value">
+                    <div>+</div>
+                    <input data-index="{{i}}" name="engagementBonus" type="number" class="exponent" value="{{p.engagementBonus}}">
+                    <div>D</div>
+                </div>
+                <div class="details-key">Position</div>
+                <div class="details-value">
+                    <div>+</div>
+                    <input data-index="{{i}}" name="positionPenalty" type="number" class="exponent" value="{{p.positionPenalty}}">
+                    <div>Ob</div>
+                </div>
+            </div>
+            <div class="weapon-block">
+                <div>Weapon</div>
+                <div class="weapon-picker">
+                    <select data-index="{{i}}" name="weaponId">
+                        {{#select p.weaponId}}
+                        <option value="">Pick a Weapon</option>
+                        {{#each p.weapons as |s|}}
+                        <option value="{{s.id}}">{{s.label}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        <div class="volley flex-column">
+            {{#if p.showActions}}
+            <label>Action 1
+                <select name="action1" data-index="{{i}}">
+                    {{#select p.action1}}
+                    {{#if p.action2}}{{else}}<option value="">Do Nothing</option>{{/if}}
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{#if p.showAction2}}
+            <label>Action 2
+                <select name="action2" data-index="{{i}}">
+                    {{#select p.action2}}
+                    {{#if p.action3}}{{else}}<option value="">Do Nothing</option>{{/if}}
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{/if}}
+            {{#if p.showAction3}}
+            <label>Action 3
+                <select name="action3" data-index="{{i}}">
+                    {{#select p.action3}}
+                    <option value="">Do Nothing</option>
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{/if}}
+            {{/if}}
+        </div>
+        <div class="volley flex-column">
+            {{#if p.showActions}}
+            <label>Action 1
+                <select name="action4" data-index="{{i}}">
+                    {{#select p.action4}}
+                    {{#if p.action5}}{{else}}<option value="">Do Nothing</option>{{/if}}
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{#if p.showAction5}}
+            <label>Action 2
+                <select name="action5" data-index="{{i}}">
+                    {{#select p.action5}}
+                    {{#if p.action6}}{{else}}<option value="">Do Nothing</option>{{/if}}
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{/if}}
+            {{#if p.showAction6}}
+            <label>Action 3
+                <select name="action6" data-index="{{i}}">
+                    {{#select p.action6}}
+                    <option value="">Do Nothing</option>
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{/if}}
+            {{/if}}
+        </div>
+        <div class="volley flex-column">
+            {{#if p.showActions}}
+            <label>Action 1
+                <select name="action7" data-index="{{i}}">
+                    {{#select p.action7}}
+                    {{#if p.action8}}{{else}}<option value="">Do Nothing</option>{{/if}}
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{#if p.showAction8}}
+            <label>Action 2
+                <select name="action8" data-index="{{i}}">
+                    {{#select p.action8}}
+                    {{#if p.action9}}{{else}}<option value="">Do Nothing</option>{{/if}}
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{/if}}
+            {{#if p.showAction9}}
+            <label>Action 3
+                <select name="action9" data-index="{{i}}">
+                    {{#select p.action9}}
+                    <option value="">Do Nothing</option>
+                    {{#each ../actionOptions as |ao|}}
+                    <optgroup label="{{@key}}">
+                        {{#each ao as |o|}}
+                        <option value="{{o}}">{{{o}}}</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </label>
+            {{/if}}
+            {{/if}}
+        </div>
+        {{/each}}
+        {{#if gmView}}
+        <div class="newParticipant">
+            <select name="newParticipant">
+                <option value="">Add a new fighter.</option>
+                {{#each participantOptions}}
+                <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/if}}
+    </div>
+</form>

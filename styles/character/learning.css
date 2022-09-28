@@ -1,0 +1,93 @@
+.practice-log {
+  width: 33%;
+}
+.practice-log .add-new-item-label {
+  font-size: 1em;
+  border-radius: 0.75em;
+  border: 2px groove #f0f0e0;
+  background-color: rgba(0, 128, 0, 0.15);
+  line-height: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+}
+.practice-log .add-new-item-label:active {
+  background-color: rgba(0, 128, 0, 0.25);
+}
+.practice-log textarea {
+  resize: vertical;
+  height: calc(100% - 2.5em);
+}
+
+.learning-section {
+  width: 66%;
+}
+.learning-section .learning {
+  display: flex;
+  width: calc(50% - 10px);
+  height: min-content;
+  margin: 1px;
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.learning-section .learning:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.learning-section .learning button {
+  flex: 0 0 3em;
+  height: 2em;
+}
+.learning-section .learning h3 {
+  flex: 1 1;
+  margin-top: 3px;
+  font-weight: bold;
+  text-align: center;
+}
+.learning-section .learning .learning-xp {
+  flex: 1 1 100%;
+  margin-bottom: 3px;
+  justify-content: center;
+  display: flex;
+}
+.learning-section .learning .learning-xp label.progress-clear {
+  display: block;
+  color: transparent;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  text-align: center;
+  margin-left: calc(15px/5);
+}
+.learning-section .learning .learning-xp label.progress-clear:hover {
+  color: red;
+}
+.learning-section .learning .learning-xp input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+.learning-section .learning .learning-xp input[type=radio]:checked ~ label.progress-tick {
+  background-color: white;
+}
+.learning-section .learning .learning-xp input[type=radio]:checked ~ label.progress-tick:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.learning-section .learning .learning-xp input[type=radio]:checked + label.progress-tick {
+  background-color: #333333;
+}
+.learning-section .learning .learning-xp input[type=radio]:disabled ~ label.progress-tick {
+  pointer-events: none;
+  opacity: 25%;
+}
+.learning-section .learning .learning-xp label.progress-tick {
+  display: block;
+  background-color: #333333;
+  border: 1px solid black;
+  border-radius: calc(15px/2);
+  width: 15px;
+  height: 15px;
+  margin-left: calc(15px/5);
+  margin-top: 1px;
+}

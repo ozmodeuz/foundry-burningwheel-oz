@@ -1,0 +1,76 @@
+.beliefs .bits-item > .bits-artha, .instincts .bits-item > .bits-artha {
+  flex: 0 0 100px;
+  border-right: 1px solid black;
+  margin-bottom: 2px;
+}
+.beliefs .bits-item > .bits-artha .bits-item-name, .instincts .bits-item > .bits-artha .bits-item-name {
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+.beliefs .bits-item > .bits-artha .bits-item-name:hover, .instincts .bits-item > .bits-artha .bits-item-name:hover {
+  color: #800;
+}
+.beliefs .bits-item > .bits-artha input[type=checkbox], .instincts .bits-item > .bits-artha input[type=checkbox] {
+  width: 1em;
+  height: 1em;
+  margin: 0 5px 0 2px;
+  vertical-align: middle;
+}
+.beliefs .bits-item > .bits-buttons, .instincts .bits-item > .bits-buttons {
+  flex: 0 20px;
+  border-right: 1px solid black;
+}
+.beliefs .bits-item > .bits-buttons i, .instincts .bits-item > .bits-buttons i {
+  width: 20px;
+  text-align: center;
+  color: gray;
+  margin-top: 3px;
+  cursor: pointer;
+}
+.beliefs .bits-item > .bits-buttons i:hover, .instincts .bits-item > .bits-buttons i:hover {
+  color: #800;
+}
+.beliefs .bits-item > textarea, .instincts .bits-item > textarea {
+  flex: 1 1 200px;
+  resize: vertical;
+  border: 0;
+  min-height: 3em;
+  height: 3em;
+}
+
+.traits .trait-category {
+  width: calc(33% - 10px);
+  margin: 5px;
+}
+.traits .trait-category .trait {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.traits .trait-category .trait:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.traits .trait-category .trait textarea {
+  background-color: transparent;
+  min-height: 8em;
+}
+.traits .trait-category .trait h3 {
+  margin-bottom: 0;
+}
+.traits .trait-category .trait label {
+  flex: 1 100px;
+}
+.traits .trait-category .trait i {
+  flex: 0 12px;
+  font-size: 12px;
+  margin-top: 6px;
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.75);
+}
+.traits .trait-category .trait i:hover {
+  color: #FF0000;
+}

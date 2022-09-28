@@ -1,0 +1,213 @@
+.combat-section .weapons {
+  width: 100%;
+}
+.combat-section .armor {
+  flex: 1;
+  margin-left: 1%;
+}
+.combat-section .armor-misc {
+  flex: 1;
+}
+.combat-section .armor-misc .training-skills .training-skill {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 0, 0.075);
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.combat-section .armor-misc .training-skills .training-skill:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.combat-section .armor-misc .training-skills .training-skill .training-skill-name {
+  width: calc(100% - 3em);
+}
+.combat-section .armor-misc .training-skills .training-skill i {
+  padding: 2px;
+}
+.combat-section .armor-misc .training-skills .training-skill i:hover {
+  color: red;
+}
+.combat-section .armor-misc .training-skills h3 {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.combat-section .armor-misc .clumsy-stats h3 {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.combat-section .armor-misc .clumsy-stats .clumsy-item {
+  width: 50%;
+  text-align: center;
+}
+.combat-section .armor-misc .clumsy-stats .clumsy-item .clumsy-label {
+  flex: 1 1 120px;
+  text-align: right;
+  padding-right: 5px;
+}
+.combat-section .armor-misc .clumsy-stats .clumsy-item .clumsy-value {
+  border-bottom: 1px solid black;
+  flex: 0 0 45px;
+  height: min-content;
+}
+.combat-section .weapon-grid {
+  column-gap: 0;
+  row-gap: 0;
+  grid-template-columns: 5fr repeat(7, 1fr) 2fr 3fr 1fr;
+}
+.combat-section .weapon-grid .weapon-header {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.combat-section .weapon-grid .weapon-row:nth-child(22n+1), .combat-section .weapon-grid .weapon-row:nth-child(22n+2),
+.combat-section .weapon-grid .weapon-row:nth-child(22n+3), .combat-section .weapon-grid .weapon-row:nth-child(22n+4),
+.combat-section .weapon-grid .weapon-row:nth-child(22n+5), .combat-section .weapon-grid .weapon-row:nth-child(22n+6),
+.combat-section .weapon-grid .weapon-row:nth-child(22n+7), .combat-section .weapon-grid .weapon-row:nth-child(22n+8),
+.combat-section .weapon-grid .weapon-row:nth-child(22n+9), .combat-section .weapon-grid .weapon-row:nth-child(22n+10),
+.combat-section .weapon-grid .weapon-row:nth-child(22n+11) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.combat-section .ranged-grid {
+  column-gap: 0;
+  row-gap: 0;
+  grid-template-columns: 5fr repeat(5, 1fr) 2fr 3fr 1fr;
+}
+.combat-section .ranged-grid .weapon-header {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.combat-section .ranged-grid .weapon-row:nth-child(18n+1), .combat-section .ranged-grid .weapon-row:nth-child(18n+2),
+.combat-section .ranged-grid .weapon-row:nth-child(18n+3), .combat-section .ranged-grid .weapon-row:nth-child(18n+4),
+.combat-section .ranged-grid .weapon-row:nth-child(18n+5), .combat-section .ranged-grid .weapon-row:nth-child(18n+6),
+.combat-section .ranged-grid .weapon-row:nth-child(18n+7), .combat-section .ranged-grid .weapon-row:nth-child(18n+8),
+.combat-section .ranged-grid .weapon-row:nth-child(18n+9) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.combat-section .ranged-grid .ims-pair {
+  line-height: 1em;
+}
+.combat-section .ranged-grid .ims-pair .weapon-ims {
+  line-height: 1.5em;
+  margin-bottom: -0.5em;
+}
+.combat-section .ranged-grid .ims-pair .weapon-dof {
+  text-align: center;
+  font-size: 10px;
+  line-height: 10px;
+}
+.combat-section .weapon-grid .weapon-row, .combat-section .ranged-grid .weapon-row {
+  font-size: 1.15em;
+  line-height: 1.9em;
+  text-align: center;
+}
+.combat-section .weapon-grid .weapon-row .weapon-skill-select, .combat-section .ranged-grid .weapon-row .weapon-skill-select {
+  width: 100%;
+  text-align-last: center;
+}
+.combat-section .weapon-grid .weapon-row button, .combat-section .ranged-grid .weapon-row button {
+  height: 2em;
+  line-height: 1.75em;
+}
+.combat-section .weapon-header, .combat-section .armor-header {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.combat-section .armor-grid {
+  grid-template-columns: 2.5em 2.75em 2.75em 6em 1fr;
+  row-gap: 0;
+  column-gap: 0;
+}
+.combat-section .armor-grid .armor-header {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.combat-section .armor-grid .armor-row {
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  margin: 0 2px;
+  height: min-content;
+  min-height: 21px;
+}
+.combat-section .armor-grid .armor-damage-input {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 0;
+  border-bottom: 1px solid black;
+  height: 100%;
+  max-height: 21px;
+  border-radius: 0;
+  -moz-appearance: textfield;
+}
+.combat-section .armor-grid .armor-damage-input::-webkit-outer-spin-button, .combat-section .armor-grid .armor-damage-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.combat-section .armor-grid .armor-broken {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #800;
+}
+.combat-section .armor-grid button {
+  height: 1.5em;
+  line-height: 1.25em;
+}
+.combat-section .armor-grid button.armor-broken {
+  pointer-events: none;
+}
+
+.chat-message .weapon-extra-info, .chat-message .ranged-extra-info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 2fr;
+  margin: -1px 0 0 -1px;
+}
+.chat-message .weapon-extra-info > div, .chat-message .ranged-extra-info > div {
+  border: 1px solid black;
+  margin-bottom: -1px;
+  margin-right: -1px;
+}
+.chat-message .weapon-extra-info .ims-title, .chat-message .ranged-extra-info .ims-title {
+  grid-column: 1/7;
+  font-weight: bold;
+  font-size: 1.125em;
+}
+.chat-message .weapon-extra-info .ims-title.shade-grey, .chat-message .ranged-extra-info .ims-title.shade-grey {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.chat-message .weapon-extra-info .ims-title.shade-black, .chat-message .ranged-extra-info .ims-title.shade-black {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.chat-message .weapon-extra-info .ims-title.shade-white, .chat-message .ranged-extra-info .ims-title.shade-white {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+}
+.chat-message .weapon-extra-info .ims-header, .chat-message .ranged-extra-info .ims-header {
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+.chat-message .weapon-extra-info .ims-header.no-left, .chat-message .ranged-extra-info .ims-header.no-left {
+  border-left: 0;
+}
+.chat-message .weapon-extra-info .ims-header.no-right, .chat-message .ranged-extra-info .ims-header.no-right {
+  border-right: 0;
+}
+.chat-message .weapon-extra-info .highlight, .chat-message .ranged-extra-info .highlight {
+  color: orangered;
+  font-weight: bold;
+}
+.chat-message .weapon-extra-info .roll-die, .chat-message .ranged-extra-info .roll-die {
+  background-color: rgba(255, 165, 0, 0.15);
+  color: orangered;
+  border-color: orangered;
+  margin: auto;
+}
+.chat-message .ranged-extra-info {
+  grid-template-columns: repeat(4, 1fr) 3fr 1fr;
+}

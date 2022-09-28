@@ -1,0 +1,28 @@
+{
+    "name": "burningwheel-oz",
+    "title": "The Burning Wheel + Oz",
+    "description": "Community Foundry implementation of The Burning Wheel with modifications by Oz",
+    "version": "1.2.0",
+    "templateVersion": 20,
+    "author": "Stas Tserkovny + Oz Browning",
+    "esmodules": [
+        "module/burningwheel.js"
+    ],
+    "scripts": [
+        "lib/select2/select2.min.js"
+    ],
+    "styles": [
+        "styles/burningwheel.css",
+        "lib/select2/select2.min.css"
+    ],
+    "packs": [],
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "9.238",
+    "socket": true,
+    "initiative": "1d20",
+    "gridDistance": 10,
+    "gridUnits": "ft",
+    "url": "https://github.com/ozmodeuz/foundry-burningwheel-oz",
+    "manifest": "https://raw.githubusercontent.com/ozmodeuz/foundry-burningwheel-oz/master/system.json",
+    "download": "https://github.com/ozmodeuzfoundry-burningwheel-oz/releases/download/1.2.0/release1.2.0.zip"
+}

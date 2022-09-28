@@ -1,0 +1,97 @@
+<div class="item-grid weapon-grid">
+    <div class="weapon-header">Melee</div>
+    <div class="weapon-header">I</div>
+    <div class="weapon-header">M</div>
+    <div class="weapon-header">S</div>
+    <div class="weapon-header">Pow</div>
+    <div class="weapon-header">Add</div>
+    <div class="weapon-header">Va</div>
+    <div class="weapon-header">Ws</div>
+    <div class="weapon-header">Length</div>
+    <div class="weapon-header">Skill Used</div>
+    <div class="weapon-header">~</div>
+
+    {{#each melee as |m|}}
+        {{#each m.data.attacks as |a|}}
+        <div class="weapon-row weapon-name" data-weapon-id="{{../_id}}" data-attack-index="{{@key}}" {{#if ../../isOwner}}draggable="true"{{/if}}>
+            {{../name}}{{#if a.attackName}} {{a.attackName}}{{/if}}
+        </div>
+        <div class="weapon-row">{{clampWound ../data.shade a.incidental}}</div>
+        <div class="weapon-row">{{clampWound ../data.shade a.mark}}</div>
+        <div class="weapon-row">{{clampWound ../data.shade a.superb}}</div>
+        <div class="weapon-row">{{a.power}}</div>
+        <div class="weapon-row">{{a.add}}</div>
+        <div class="weapon-row">{{a.vsArmor}}</div>
+        <div class="weapon-row">{{a.weaponSpeed}}</div>
+        <div class="weapon-row">{{titlecase a.weaponLength}}</div>
+        <div class="weapon-row">
+            <select class="weapon-skill-select" data-item-id="{{../_id}}" data-binding="data.skillId" value="{{../data.skillId}}">
+                {{#select ../data.skillId}}
+                <option value="">None</option>
+                {{#each ../../skills as |s|}}
+                <option value="{{s._id}}">{{s.name}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="weapon-row">
+            <button
+                type="button"
+                class="rollable modifiable"
+                data-roll-type="weapon"
+                data-skill-id="{{../data.skillId}}"
+                data-weapon-id="{{../_id}}"
+                data-attack-index="{{@key}}"
+                {{#if ../../isOwner}}draggable="true"{{/if}}
+                >
+                <i class="fas fa-dice"></i>
+            </button>
+        </div>
+        {{/each}}
+    {{/each}}
+</div>
+<hr>
+<div class="item-grid ranged-grid">
+    <div class="weapon-header">Missile</div>
+    <div class="weapon-header">I</div>
+    <div class="weapon-header">M</div>
+    <div class="weapon-header">S</div>
+    <div class="weapon-header">Opt</div>
+    <div class="weapon-header">Extr</div>
+    <div class="weapon-header">Max</div>
+    <div class="weapon-header">Skill Used</div>
+    <div class="weapon-header">~</div>
+    {{#each ranged as |r|}}
+    <div class="weapon-row weapon-name" data-roll-type="weapon" data-weapon-id="{{r._id}}" {{#if ../isOwner}}draggable="true"{{/if}}>
+        {{r.name}}
+    </div>
+    <div class="weapon-row"><div class="ims-pair"><div class="weapon-ims">{{clampWound r.data.shade r.data.incidental}}</div><label class="weapon-dof">{{r.data.incidentalLabel}}</label></div></div>
+    <div class="weapon-row"><div class="ims-pair"><div class="weapon-ims">{{clampWound r.data.shade r.data.mark}}</div><label class="weapon-dof">{{r.data.markLabel}}</label></div></div>
+    <div class="weapon-row"><div class="ims-pair"><div class="weapon-ims">{{clampWound r.data.shade r.data.superb}}</div><label class="weapon-dof">{{r.data.superbLabel}}</label></div></div>
+    <div class="weapon-row">{{r.data.optimalRange}}D</div>
+    <div class="weapon-row">{{r.data.extremeRange}}D</div>
+    <div class="weapon-row">{{titlecase r.data.maxRange}}</div>
+    <div class="weapon-row">
+        <select class="weapon-skill-select" data-item-id="{{r._id}}" data-binding="data.skillId" value="{{r.data.skillId}}">
+            {{#select r.data.skillId}}
+            <option value="">None</option>
+            {{#each ../skills as |s|}}
+            <option value="{{s._id}}">{{s.name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <div class="weapon-row">
+            <button
+                type="button"
+                class="rollable modifiable"
+                data-roll-type="weapon"
+                data-skill-id="{{r.data.skillId}}"
+                data-weapon-id="{{r._id}}"
+                {{#if ../isOwner}}draggable="true"{{/if}}
+                >
+                <i class="fas fa-dice"></i>
+            </button>
+    </div>
+    {{/each}}
+</div>

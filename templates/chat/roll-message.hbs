@@ -1,0 +1,121 @@
+<div class="chat-message flex-row">
+    <div class="roll-full-width message-title {{nameClass}}">
+        {{name}} Test
+    </div>
+    <div class="roll-full-width roll-{{difficultyGroup}}">
+        {{difficultyGroup}}
+    </div>
+    <div class="roll-half-width">
+        {{#each dieSources as |source|}}
+        <div class="right-align">
+            {{@key}} {{source}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="roll-half-width">
+        <div class="left-align">
+            +{{difficulty}} Base Ob
+        </div>
+        {{#if obPenalty}}
+        <div class="left-align">
+            +{{obPenalty}} Wound Penalty
+        </div>    
+        {{/if}}
+        {{#if penaltySources}}
+        {{#each penaltySources as |s|}}
+        <div class="left-align">
+            {{s}} {{@key}}
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+    <div class="roll-half-width">
+        <label>Successes</label>
+        <div>{{ successes }}</div>
+    </div>
+    <div class="roll-half-width">
+        <label>Obstacle</label>
+        <div>{{ obstacleTotal }}</div>
+    </div>
+    <div class="roll-dice roll-full-width flex-row">
+        {{#each rolls as |r|}}
+        <div class="roll-die" data-success="{{r.success}}">
+            {{r.result}}
+        </div>
+        {{/each}}
+        {{#if wildRolls}}
+        <div class="vertical-divider"></div>
+        {{#each wildRolls as |wr|}}
+        <div class="roll-die" data-success="{{wr.success}}">
+            {{wr.result}}
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+    {{#if success}}
+    <div class="roll-result roll-full-width roll-success">
+        Success!
+    </div>
+    {{else}}
+    <div class="roll-result roll-full-width roll-failure">
+        Failure!
+    </div>
+    {{/if}}
+    {{#if extraInfo}}
+    <div class="roll-full-width roll-extra-info">
+        {{{extraInfo}}}
+    </div>
+    {{/if}}
+    <div class="reroll-buttons roll-full-width flex-column">
+        {{#each callons as |c|}}
+        <div class="chat-reroll">
+            <button class="chat-callon-button"
+                data-actor-id="{{c.actorId}}"
+                data-reroll-type="{{c.type}}"
+                data-dice="{{c.dice}}"
+                {{#if c.splitDice}}data-split-dice="{{c.splitDice}}"{{/if}}
+                data-roll-name="{{../name}}"
+                {{#if c.itemId}} data-item-id="{{c.itemId}}" {{/if}}
+                {{#if c.accessor}} data-accessor="{{c.accessor}}" {{/if}}
+                {{#if c.learningTarget}} data-learning-target="{{c.learningTarget}}" {{/if}}
+                {{#if c.ptgsAction}} data-ptgs-action="{{c.ptgsAction}}" {{/if}}
+                data-difficulty="{{../obstacleTotal}}"
+                data-successes="{{../successes}}"
+                data-split-successes="{{../splitSuccesses}}"
+                data-difficulty-group="{{../difficultyGroup}}">Call-on: {{c.label}}</button>
+        </div>
+        {{/each}}
+        {{#if fateReroll}}
+        <div class="chat-reroll flex-row">
+            <button class="chat-fate-button"
+                data-actor-id="{{fateReroll.actorId}}"
+                data-reroll-type="{{fateReroll.type}}"
+                data-dice="{{fateReroll.dice}}"
+                {{#if fateReroll.splitDice}}data-split-dice="{{fateReroll.splitDice}}"{{/if}}
+                data-roll-name="{{name}}"
+                {{#if fateReroll.itemId}} data-item-id="{{fateReroll.itemId}}" {{/if}}
+                {{#if fateReroll.accessor}} data-accessor="{{fateReroll.accessor}}" {{/if}}
+                {{#if fateReroll.learningTarget}} data-learning-target="{{fateReroll.learningTarget}}" {{/if}}
+                {{#if fateReroll.ptgsAction}} data-ptgs-action="{{fateReroll.ptgsAction}}" {{/if}}
+                data-difficulty="{{obstacleTotal}}"
+                data-successes="{{successes}}"
+                data-split-successes="{{splitSuccesses}}"
+                data-difficulty-group="{{difficultyGroup}}">Reroll with Fate</button>
+            <button class="chat-deeds-button"
+                data-actor-id="{{fateReroll.actorId}}"
+                data-reroll-type="{{fateReroll.type}}"
+                data-dice="{{fateReroll.dice}}"
+                {{#if fateReroll.splitDice}}data-split-dice="{{fateReroll.splitDice}}"{{/if}}
+                data-roll-name="{{name}}"
+                {{#if fateReroll.itemId}} data-item-id="{{fateReroll.itemId}}" {{/if}}
+                {{#if fateReroll.accessor}} data-accessor="{{fateReroll.accessor}}" {{/if}}
+                {{#if fateReroll.learningTarget}} data-learning-target="{{fateReroll.learningTarget}}" {{/if}}
+                {{#if fateReroll.ptgsAction}} data-ptgs-action="{{fateReroll.ptgsAction}}" {{/if}}
+                data-difficulty="{{obstacleTotal}}"
+                data-successes="{{successes}}"
+                data-split-successes="{{splitSuccesses}}"
+                data-difficulty-group="{{difficultyGroup}}">Reroll with Deeds</button>
+        </div>
+        {{/if}}
+    </div>
+</div>

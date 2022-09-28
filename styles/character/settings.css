@@ -1,0 +1,41 @@
+.character-settings-section {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.character-settings-section .checkbox-grid {
+  grid-template-columns: repeat(auto-fill, 24px calc(33% - 24px));
+}
+.character-settings-section .settings-items {
+  padding: 3px;
+  border: 2px inset black;
+  border-radius: 5px;
+  height: 15em;
+  overflow-y: scroll;
+  border-bottom: 2px inset grey;
+  border-right: 2px inset grey;
+}
+.character-settings-section .settings-items .setting-item-header,
+.character-settings-section .settings-items .setting-item-row {
+  display: grid;
+  grid-template-columns: 4fr 1fr 24px 24px;
+  margin-bottom: 3px;
+}
+.character-settings-section .settings-items .setting-item-header i:hover,
+.character-settings-section .settings-items .setting-item-row i:hover {
+  color: red;
+}
+.character-settings-section .settings-items .setting-item-header {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  font-size: 1.5em;
+  border-bottom: 2px solid black;
+}
+.character-settings-section .settings-items .setting-item-row {
+  font-size: 1em;
+}
+.character-settings-section .settings-items .setting-item-row:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.05);
+}

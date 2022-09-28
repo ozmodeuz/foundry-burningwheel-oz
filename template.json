@@ -1,0 +1,583 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "setting"
+    ],
+    "templates": {
+      "ptgs": {
+        "ptgs": {
+          "wound1": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound2": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound3": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound4": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound5": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound6": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound7": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound8": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound9": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound10": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound11": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound12": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound13": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound14": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound15": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "wound16": {
+            "amount": 0,
+            "threshold": "bruise"
+          },
+          "woundNotes1": "",
+          "woundNotes2": "",
+          "woundNotes3": "",
+          "woundRecovery1": 0,
+          "woundRecovery2": 0,
+          "woundRecovery3": 0,
+          "shrugging": false,
+          "gritting": false
+        }
+      },
+      "displayProps": {
+        "collapseBeliefs": false,
+        "collapseInstincts": false,
+        "collapseTraits": false,
+        "collapseStats": false,
+        "collapseAttributes": false,
+        "collapseRelationships": false,
+        "collapseGear": false,
+        "collapseSkills": false,
+        "collapseLearning": false,
+        "collapsePtgs": false,
+        "collapseCombat": false,
+        "collapseMisc": false,
+        "collapseSpells": false
+      },
+      "common": {
+        "will": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0
+        },
+        "power": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0
+        },
+        "agility": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0
+        },
+        "perception": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0
+        },
+        "forte": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0
+        },
+        "speed": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0
+        },
+        "health": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0,
+          "routine": 0
+        },
+        "steel": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": true,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0,
+          "routine": 0
+        },
+        "circles": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0,
+          "routine": 0
+        },
+        "resources": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0,
+          "routine": 0
+        },
+        "custom1": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0,
+          "routine": 0,
+          "name": ""
+        },
+        "custom2": {
+          "exp": 1,
+          "difficult": 0,
+          "challenging": 0,
+          "shade": "B",
+          "open": false,
+          "collapsed": true,
+          "persona": 0,
+          "fate": 0,
+          "deeds": 0,
+          "routine": 0,
+          "name": ""
+        },
+        "stride": 7,
+        "mountedStride": 0,
+        "cash": 0,
+        "funds": 0,
+        "property": "",
+        "loans": "",
+        "debt": "",
+        "resourcesTax": 0,
+        "willTax": 0,
+        "forteTax": 0,
+        "fate": 0,
+        "persona": 0,
+        "deeds": 0
+      },
+      "settings": {
+        "settings": {
+          "showSettings": false,
+          "roundUpMortalWound": false,
+          "roundUpReflexes": false,
+          "onlySuccessesCount": "Faith, Resources, Perception",
+          "armorTrained": false,
+          "ignoreSuperficialWounds": false,
+          "showBurner": true
+        }
+      },
+      "spellsSustained": {
+        "sustainedSpell1": "",
+        "sustainedSpell1Ob": 0,
+        "sustainedSpell2": "",
+        "sustainedSpell2Ob": 0,
+        "sustainedSpell3": "",
+        "sustainedSpell3Ob": 0,
+        "sustainedSpell4": "",
+        "sustainedSpell4Ob": 0
+      }
+    },
+    "character": {
+      "templates": [
+        "common",
+        "displayProps",
+        "ptgs",
+        "settings",
+        "spellsSustained"
+      ],
+      "stock": "",
+      "age": 18,
+      "lifepathString": "",
+      "alias": "",
+      "homeland": "",
+      "features": "",
+      "practiceLog": "",
+      "miscNotes1": "",
+      "miscNotes2": "",
+      "miscNotes3": ""
+    },
+    "npc": {
+      "templates": [
+        "common",
+        "displayProps"
+      ],
+      "editMode": false,
+      "bio": "",
+      "hesitation": 5,
+      "reflexes": 1,
+      "reflexesShade": "B",
+      "ptgs": {
+        "suThresh": 3,
+        "suTaken": 0,
+        "suShade": "B",
+        "liThresh": 5,
+        "liTaken": 0,
+        "liShade": "B",
+        "miThresh": 7,
+        "miTaken": 0,
+        "miShade": "B",
+        "seThresh": 8,
+        "seTaken": 0,
+        "seShade": "B",
+        "trThresh": 9,
+        "trTaken": 0,
+        "trShade": "B",
+        "moTaken": 0,
+        "moThresh": 10,
+        "woundShade": "B"
+      }
+    },
+    "setting": {
+      "description": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "belief",
+      "instinct",
+      "trait",
+      "skill",
+      "relationship",
+      "reputation",
+      "affiliation",
+      "possession",
+      "property",
+      "melee weapon",
+      "ranged weapon",
+      "armor",
+      "spell",
+      "lifepath"
+    ],
+    "templates": {
+      "arthaEarner": {
+        "fate": false,
+        "persona": false,
+        "deeds": false,
+        "fateSpent": 0,
+        "personaSpent": 0,
+        "deedsSpent": 0
+      },
+      "pointCost": {
+        "pointCost": 1
+      }
+    },
+    "belief": {
+      "templates": [
+        "arthaEarner"
+      ],
+      "text": ""
+    },
+    "instinct": {
+      "templates": [
+        "arthaEarner"
+      ],
+      "text": ""
+    },
+    "trait": {
+      "templates": [
+        "pointCost"
+      ],
+      "name": "",
+      "traittype": "character",
+      "text": "",
+      "collapsed": true,
+      "hasAptitudeModifier": false,
+      "aptitudeModifier": 0,
+      "aptitudeTarget": "",
+      "hasDieModifier": false,
+      "dieModifier": 0,
+      "dieModifierTarget": "",
+      "hasObModifier": false,
+      "obModifierTarget": "",
+      "obModifier": 0,
+      "addsReputation": false,
+      "reputationName": "",
+      "reputationDice": 0,
+      "reputationInfamous": false,
+      "addsAffiliation": false,
+      "affiliationName": "",
+      "affiliationDice": 0,
+      "callonTarget": "",
+      "restrictions": ""
+    },
+    "skill": {
+      "name": "",
+      "shade": "B",
+      "exp": 1,
+      "routine": 0,
+      "difficult": 0,
+      "challenging": 0,
+      "root1": "perception",
+      "root2": "",
+      "learning": false,
+      "learningProgress": 0,
+      "skilltype": "academic",
+      "training": false,
+      "magical": false,
+      "description": "",
+      "collapsed": false,
+      "persona": 0,
+      "fate": 0,
+      "deeds": 0,
+      "open": false,
+      "wildFork": false,
+      "tools": false,
+      "restrictions": ""
+    },
+    "relationship": {
+      "description": "",
+      "forbidden": false,
+      "immediateFamily": false,
+      "otherFamily": false,
+      "romantic": false,
+      "hateful": false,
+      "influence": "minor",
+      "enmity": false,
+      "building": true,
+      "buildingProgress": 0
+    },
+    "possession": {
+      "templates": [
+        "pointCost"
+      ],
+      "isToolkit": false,
+      "isExpended": false,
+      "description": ""
+    },
+    "property": {
+      "templates": [
+        "pointCost"
+      ],
+      "isWorkshop": false,
+      "description": ""
+    },
+    "melee weapon": {
+      "templates": [
+        "pointCost"
+      ],
+      "quality": "run-of-the-mill",
+      "handedness": "one",
+      "description": "",
+      "skillId": "",
+      "shade": "B",
+      "baseOb": 1,
+      "attacks": [
+        {
+          "attackName": "",
+          "power": 1,
+          "add": 2,
+          "vsArmor": 0,
+          "weaponSpeed": "X",
+          "weaponLength": "shortest"
+        }
+      ]
+    },
+    "ranged weapon": {
+      "templates": [
+        "pointCost"
+      ],
+      "quality": "run-of-the-mill",
+      "hasGunpowder": false,
+      "usePower": false,
+      "powerBonus": 1,
+      "incidental": 4,
+      "incidentalRoll": 2,
+      "mark": 8,
+      "markRoll": 4,
+      "superb": 12,
+      "vsArmor": 2,
+      "optimalRange": 1,
+      "extremeRange": 3,
+      "maxRange": "125 paces",
+      "handedness": "two",
+      "description": "",
+      "skillId": "",
+      "shade": "B"
+    },
+    "armor": {
+      "templates": [
+        "pointCost"
+      ],
+      "quality": "run-of-the-mill",
+      "dice": 1,
+      "hasHelm": false,
+      "damageHelm": 0,
+      "hasTorso": false,
+      "damageTorso": 0,
+      "hasLeftArm": false,
+      "damageLeftArm": 0,
+      "hasRightArm": false,
+      "damageRightArm": 0,
+      "hasLeftLeg": false,
+      "damageLeftLeg": 0,
+      "hasRightLeg": false,
+      "damageRightLeg": 0,
+      "hasShield": false,
+      "damageShield": 0,
+      "description": "",
+      "equipped": false,
+      "untrainedPenalty": "none",
+      "agilityPenalty": 0,
+      "speedObPenalty": 0,
+      "speedDiePenalty": 0,
+      "climbingPenalty": 0,
+      "healthFortePenalty": 0,
+      "throwingShootingPenalty": 0,
+      "stealthyPenalty": 0,
+      "swimmingPenalty": 0,
+      "perceptionObservationPenalty": 0,
+      "shade": "B"
+    },
+    "reputation": {
+      "description": "",
+      "dice": 0,
+      "infamous": false
+    },
+    "affiliation": {
+      "description": "",
+      "dice": 0
+    },
+    "spell": {
+      "templates": [
+        "pointCost"
+      ],
+      "variableObstacle": false,
+      "variableObstacleDescription": "",
+      "obstacle": 4,
+      "upSpell": false,
+      "actions": 1,
+      "description": "A brand new spell",
+      "origin": "",
+      "areaOfEffect": "",
+      "element": "",
+      "impetus": "",
+      "duration": "",
+      "rpCost": 0,
+      "isWeapon": false,
+      "halfWill": false,
+      "willDamageBonus": 0,
+      "va": 0,
+      "weaponLength": "shortest",
+      "optimalRange": 0,
+      "extremeRange": 0,
+      "maxRange": "10 Paces",
+      "collapsed": false,
+      "skillId": "",
+      "inPracticals": false,
+      "learningProgress": 0
+    },
+    "lifepath": {
+      "time": 5,
+      "resources": 5,
+      "statBoost": "none",
+      "subtractStats": false,
+      "leads": "Any",
+      "skillPoints": 0,
+      "generalPoints": 0,
+      "traitPoints": 0,
+      "skillList": "",
+      "traitList": "",
+      "note": "",
+      "requirements": "",
+      "restrictions": "",
+      "order": 0
+    }
+  }
+}

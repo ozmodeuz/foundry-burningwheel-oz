@@ -1,0 +1,182 @@
+.spell-section .spell-sustained-info {
+  display: grid;
+  grid-template-columns: 1fr 4em;
+}
+.spell-section .sustained-spell-list {
+  grid-column: 2/span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr 3em min-content);
+}
+.spell-section .sustained-spell-list .grid-header {
+  font-weight: bold;
+}
+.spell-section .sustained-spell-list input {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+  height: 100%;
+}
+.spell-section .sustained-spell-list input[type=number] {
+  width: 3em;
+  -moz-appearance: textfield;
+}
+.spell-section .sustained-spell-list input[type=number]::-webkit-outer-spin-button, .spell-section .sustained-spell-list input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.spell-section .spell-section-item {
+  height: min-content;
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.spell-section .spell-section-item:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.spell-section .spell-item-title {
+  width: calc(100% - 2.5em);
+  display: block;
+  font-weight: bold;
+  font-size: 1.125em;
+  line-height: 2em;
+}
+.spell-section .spell-item-title i {
+  font-size: 14px;
+}
+.spell-section .spell-details {
+  position: relative;
+  width: 100%;
+  border-top: 2px groove salmon;
+}
+.spell-section .spell-details .edit-icons {
+  position: absolute;
+  bottom: 1px;
+  right: 3px;
+}
+.spell-section .spell-details .edit-icons:hover {
+  background-color: unset;
+}
+.spell-section .spell-details .edit-icons i:hover {
+  color: red;
+}
+.spell-section .spell-details:hover {
+  background-color: unset;
+}
+.spell-section .spell-details .spell-details-label {
+  font-weight: bold;
+}
+.spell-section .spell-details .spell-details-label, .spell-section .spell-details .spell-details-data {
+  width: 50%;
+}
+.spell-section .spell-details .spell-details-label:hover, .spell-section .spell-details .spell-details-data:hover {
+  background-color: unset;
+}
+.spell-section .spell-details select {
+  height: unset;
+}
+.spell-section .spell-details .spell-weapon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 75%;
+}
+.spell-section .spell-details .spell-weapon .table-header {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+.spell-section .spell-details .spell-weapon:hover {
+  background-color: unset;
+}
+.spell-section .spell-details .spell-weapon div {
+  border: 1px solid black;
+  margin-bottom: -1px;
+  margin-right: -1px;
+  text-align: center;
+}
+.spell-section .spell-details .practicals-label {
+  width: 50%;
+  font-weight: bold;
+}
+.spell-section .spell-details .test-tracking {
+  width: 50%;
+  flex-wrap: wrap;
+  display: flex;
+}
+.spell-section .spell-details .test-tracking > label.progress-clear {
+  margin-left: -12px !important;
+}
+.spell-section .spell-details .test-tracking label.progress-clear {
+  display: block;
+  color: transparent;
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  text-align: center;
+  margin-left: calc(12px/5);
+}
+.spell-section .spell-details .test-tracking label.progress-clear:hover {
+  color: red;
+}
+.spell-section .spell-details .test-tracking input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+.spell-section .spell-details .test-tracking input[type=radio]:checked ~ label.progress-tick {
+  background-color: white;
+}
+.spell-section .spell-details .test-tracking input[type=radio]:checked ~ label.progress-tick:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.spell-section .spell-details .test-tracking input[type=radio]:checked + label.progress-tick {
+  background-color: #333333;
+}
+.spell-section .spell-details .test-tracking input[type=radio]:disabled ~ label.progress-tick {
+  pointer-events: none;
+  opacity: 25%;
+}
+.spell-section .spell-details .test-tracking label.progress-tick {
+  display: block;
+  background-color: #333333;
+  border: 1px solid black;
+  border-radius: calc(12px/2);
+  width: 12px;
+  height: 12px;
+  margin-left: calc(12px/5);
+  margin-top: 1px;
+}
+
+.chat-message .spell-extra-info {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) 2fr;
+  margin: -1px 0 0 -1px;
+}
+.chat-message .spell-extra-info .roll-die {
+  background-color: rgba(255, 165, 0, 0.15);
+  color: orangered;
+  border-color: orangered;
+  margin: auto;
+}
+.chat-message .spell-extra-info > div {
+  border: 1px solid black;
+  margin-bottom: -1px;
+  margin-right: -1px;
+  text-align: center;
+}
+.chat-message .spell-extra-info .highlight {
+  color: orangered;
+  font-weight: bold;
+}
+.chat-message .spell-extra-info .spell-title {
+  grid-column: 1/8;
+  font-weight: bold;
+  font-size: 1.125em;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.chat-message .spell-extra-info .ims-header {
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}

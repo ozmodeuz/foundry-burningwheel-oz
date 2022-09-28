@@ -1,0 +1,35 @@
+<form autocomplete="off" class="setting-sheet">
+    <div class="header flex-row">
+        <div class="portrait">
+            <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        </div>
+        <div class="details flex-column">
+            <input type="text" value="{{actor.name}}" name="name">
+            {{#if editable}}
+            <textarea name="data.description">{{data.description}}</textarea>
+            {{else}}
+            <div class="description">
+                {{data.description}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    <hr>
+    <div class="lifepath-list">
+        <div class="section-header">
+            <div class="header">
+                <div class="title">Lifepath</div>
+                <div class="years">Time</div>
+                <div class="resources">Res</div>
+                <div class="stat-boost">Stat</div>
+                <div class="leads">Leads</div>
+                <div class="fas"></div>
+            </div>
+        </div>
+        {{#each lifepaths as |lp index|}}
+        <div class="drop-area" data-index="{{index}}"></div>
+        {{> "systems/burningwheel/templates/parts/lifepath.hbs"}}
+        {{/each}}
+        <div class="drop-area" data-index="{{lifepaths.length}}"></div>
+    </div>
+</form>

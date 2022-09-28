@@ -1,0 +1,158 @@
+<form class="rnc flex-row">
+    <div class="control-grid">
+        <button type="button" class="control-button" data-action="clearAll">Clear All</button>
+        <button type="button" class="control-button" data-action="resetRound">Reset Round</button>
+    </div>
+    <div class="team-grid">
+        <div class="team-header">Team</div>
+        {{#if gmView}}
+        <div class="pill-toggle">
+            <input type="checkbox" name="showV1" id="showRncV1" {{checked showV1}}>
+            <label for="showRncV1">Show Volley 1</label>
+        </div>
+        <div class="pill-toggle">
+            <input type="checkbox" name="showV2" id="showRncV2" {{checked showV2}}>
+            <label for="showRncV2">Show Volley 2</label>
+        </div>
+        <div class="pill-toggle">
+            <input type="checkbox" name="showV3" id="showRncV3" {{checked showV3}}>
+            <label for="showRncV3">Show Volley 3</label>
+        </div>
+        {{else}}
+        <div class="team-header">Volley 1</div>
+        <div class="team-header">Volley 2</div>
+        <div class="team-header">Volley 3</div>
+        {{/if}}
+        {{#each teams as |t i|}}
+        <div class="team-card flex-column">
+            <div class="flex-row">
+                {{#if ../gmView}}
+                <div class="hide-actions">
+                    {{#if t.hideActions}}
+                    <i data-index="{{i}}" class="fas fa-eye-slash" data-action="toggle-hidden"></i>
+                    {{else}}
+                    <i data-index="{{i}}" class="fas fa-eye" data-action="toggle-hidden"></i>
+                    {{/if}}
+                </div>
+                {{/if}}
+                <div class="team-name">Team {{add i 1}}</div>
+            </div>
+            <div class="team-label">Range</div>
+            {{#if t.editable}}
+            <select name="range" data-index="{{i}}">
+                {{#select t.range}}
+                <option value="Optimal">Optimal</option>
+                <option value="Extreme">Extreme</option>
+                <option value="Out of Range">Out of Range</option>
+                {{/select}}
+            </select>
+            {{else}}
+            {{t.range}}
+            {{/if}}
+            <div class="team-label">Maneuver Dice</div>
+            <div class="maneuver-grid">
+                <div>Stride</div>
+                <div>Weapon</div>
+                <div>Position</div>
+                <div>Misc.</div>
+                {{#if t.editable}}
+                <input type="number" data-index="{{i}}" name="strideDice" value="{{t.strideDice}}">
+                <input type="number" data-index="{{i}}" name="positionDice" value="{{t.positionDice}}">
+                <input type="number" data-index="{{i}}" name="weaponDice" value="{{t.weaponDice}}">
+                <input type="number" data-index="{{i}}" name="miscDice" value="{{t.miscDice}}">
+                {{else}}
+                <div>{{t.strideDice}}</div><div>{{t.positionDice}}</div><div>{{t.weaponDice}}</div><div>{{t.miscDice}}</div>
+                {{/if}}
+            </div>
+            <div class="team-label">Members</div>
+            <ul>
+                {{#each t.members as |m idx|}}
+                <li>
+                    <span>{{m.name}}</span>
+                    {{#if ../../gmView}}<i class="fas fa-trash" data-action="delete-member" data-index="{{i}}" data-member-index="{{idx}}"></i>{{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            {{#if ../gmView}}
+            <select name="newMember" data-index="{{i}}">
+                <option value="">Add a teammate.</option>
+                {{#each ../actors as |a|}}
+                <option value="{{a.id}}">{{a.name}}</option>
+                {{/each}}
+            </select>
+            {{/if}}
+        </div>
+        <div class="team-action">
+            {{#if t.editable}}
+            <select name="action1" data-index="{{i}}">
+                <option value="Do Nothing">Do Nothing</option>
+                {{#select t.action1}}
+                {{#each ../actionOptions as |ao|}}
+                <optgroup label="{{@key}}">
+                    {{#each ao as |o|}}
+                    <option value="{{o}}">{{o}}</option>
+                    {{/each}}
+                </optgroup>
+                {{/each}}
+                {{/select}}
+            </select>
+            {{/if}}
+            {{#if t.showAction1}}
+            <div class="action-card">{{t.action1}}</div>
+            {{else}}
+            <div class="card-back"><i class='fas fa-dharmachakra'></i></div>
+            {{/if}}
+        </div>
+        <div class="team-action">
+            {{#if t.editable}}
+            <select name="action2" data-index="{{i}}">
+                <option value="Do Nothing">Do Nothing</option>
+                {{#select t.action2}}
+                {{#each ../actionOptions as |ao|}}
+                <optgroup label="{{@key}}">
+                    {{#each ao as |o|}}
+                    <option value="{{o}}">{{o}}</option>
+                    {{/each}}
+                </optgroup>
+                {{/each}}
+                {{/select}}
+            </select>
+            {{/if}}
+            {{#if t.showAction2}}
+            <div class="action-card">{{t.action2}}</div>
+            {{else}}
+            <div class="card-back"><i class='fas fa-dharmachakra'></i></div>
+            {{/if}}
+        </div>
+        <div class="team-action">
+            {{#if t.editable}}
+            <select name="action3" data-index="{{i}}">
+                <option value="Do Nothing">Do Nothing</option>
+                {{#select t.action3}}
+                {{#each ../actionOptions as |ao|}}
+                <optgroup label="{{@key}}">
+                    {{#each ao as |o|}}
+                    <option value="{{o}}">{{o}}</option>
+                    {{/each}}
+                </optgroup>
+                {{/each}}
+                {{/select}}
+            </select>
+            {{/if}}
+            {{#if t.showAction3}}
+            <div class="action-card">{{t.action3}}</div>
+            {{else}}
+            <div class="card-back"><i class='fas fa-dharmachakra'></i></div>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{#if gmView}}
+    <select name="newTeam">
+        <option value="">Add a new team.</option>
+        {{#each actors as |a|}}
+        <option value="{{a.id}}">{{a.name}}</option>
+        {{/each}}
+    </select>
+    {{/if}}
+</form>

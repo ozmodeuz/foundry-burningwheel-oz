@@ -1,0 +1,192 @@
+.dialog {
+  margin-bottom: 5px;
+}
+.dialog .checkbox-grid {
+  grid-template-columns: repeat(3, 23px 1fr);
+}
+.dialog .checkbox-grid.col-2 {
+  grid-template-columns: repeat(2, 23px 1fr);
+}
+.dialog .dialog-row:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dialog > .flex-row {
+  padding: 3px 5px 0 5px;
+  border: 2px outset #b4b4b4;
+  border-top: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.dialog > .flex-row .checkbox-grid {
+  margin-top: -10px;
+  margin-bottom: 3px;
+  width: 100%;
+}
+.dialog > .flex-row .checkbox-grid.half-width {
+  grid-template-columns: 23px 1fr;
+  width: 50%;
+}
+.dialog .dialog-section-before {
+  flex: 0 0 10px;
+  margin-top: -3px;
+  margin-bottom: 17px;
+  margin-left: -4px;
+  border: 1px solid #b4b4b4;
+}
+.dialog .dialog-section-text {
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: -10px;
+}
+.dialog .dialog-section-after {
+  flex: 1 1 50%;
+  margin-top: -3px;
+  margin-bottom: 17px;
+  margin-right: -4px;
+  border: 1px solid #b4b4b4;
+}
+.dialog .dialog-row {
+  flex-basis: 50%;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.dialog .dialog-row label {
+  flex: 1 1 50%;
+  line-height: 1.5em;
+}
+.dialog .dialog-row input[type=number] {
+  flex: 0 0 2.5em;
+  margin-right: 5px;
+  text-align: center;
+}
+.dialog .dialog-row input[type=number]:enabled {
+  background-color: white;
+}
+.dialog .dialog-row input[type=checkbox] {
+  height: 16px;
+  flex: 0 0 2.5em;
+}
+.dialog .dialog-row select {
+  flex: 0 0 2.6em;
+  margin-right: 5px;
+  /* remove dropdown triangle for IE-10 */
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+  border: 0;
+  text-align-last: center;
+  border: 1px solid grey;
+  background-color: white;
+}
+.dialog .dialog-row select::-ms-expand {
+  display: none;
+}
+.dialog .roll-warning {
+  width: 100%;
+  padding: 3px;
+  border: 2px outset #b4b4b4;
+  text-align: center;
+  border-radius: 5px;
+  margin: 8px 0;
+  font-weight: bold;
+  background-color: rgba(80, 0, 0, 0.25);
+  color: #800;
+}
+
+.search-box {
+  border-top: 2px groove salmon;
+  font-size: 1.125em;
+  padding: 3px;
+}
+.search-box .new-item-dialog-search {
+  border: 0;
+  width: calc(100% - 1.5em);
+}
+
+.import-compendium-select select {
+  width: 95%;
+  height: 4em;
+}
+.import-compendium-select .select2-selection--multiple {
+  height: 4em;
+  overflow-y: scroll;
+}
+
+.search-grid {
+  height: 500px;
+  overflow-y: auto;
+  margin-bottom: 3px;
+}
+
+.search-entry {
+  margin-bottom: 2px;
+  font-size: 1em;
+  border-radius: 0.75em;
+  border: 2px groove #f0f0e0;
+  background-color: rgba(128, 128, 128, 0.15);
+  line-height: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+  border-radius: 0;
+  padding: 1px 3px;
+}
+.search-entry:active {
+  background-color: rgba(128, 128, 128, 0.25);
+}
+.search-entry .item-select-image {
+  flex: 0 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+.search-entry .item-select-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+.search-entry .item-select {
+  flex: 1 1;
+}
+
+.item-select-header {
+  text-align: left;
+  width: 100%;
+  border-bottom: 2px groove salmon;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.item-select-info {
+  width: 33%;
+  text-align: right;
+}
+
+.compendium-select {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.compendium-select .compendium-item {
+  border: 2px groove grey;
+  border-radius: 3px;
+  margin-bottom: 3px;
+  background: linear-gradient(0deg, gray, darkgray);
+}
+.compendium-select .compendium-item label {
+  font-size: 1.25em;
+  font-weight: bold;
+  width: calc(100% - 2em);
+  display: inline-block;
+}
+.compendium-select .compendium-item input {
+  height: 1.125em;
+  width: 1.125em;
+}
+
+.import-dialog .window-content .dialog-buttons > button.dialog-button {
+  width: calc(50% - 2px);
+  margin: 0;
+  flex: unset;
+}

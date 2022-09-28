@@ -1,0 +1,41 @@
+.armor-sheet .armor-location-group {
+  width: 100%;
+}
+.armor-sheet .armor-location-group .armor-location-details {
+  display: none;
+  border: 1px solid black;
+  border-top: 1px solid darkgrey;
+  border-left: 1px solid darkgrey;
+  padding: 1px 3px;
+  width: calc(100% - 11em);
+}
+.armor-sheet .armor-location-group .armor-location-selection {
+  border-right: 1px solid black;
+  padding-right: 5px;
+  width: 10em;
+  place-content: space-evenly;
+}
+.armor-sheet .armor-location-group .armor-location-checkbox:checked ~ .armor-location-details {
+  display: grid;
+}
+.armor-sheet .armor-location-group .armor-damage-left, .armor-sheet .armor-location-group .armor-damage-right {
+  display: none;
+}
+.armor-sheet .armor-location-group .armor-checkbox-left:checked ~ .armor-location-details .armor-damage-left,
+.armor-sheet .armor-location-group .armor-checkbox-right:checked ~ .armor-location-details .armor-damage-right {
+  display: block;
+}
+.armor-sheet .armor-location-group .armor-location-checkbox:checked + .armor-location-label {
+  background: linear-gradient(rgba(0, 128, 0, 0.05), rgba(0, 128, 0, 0.25));
+  border: 2px solid #005500;
+  color: #005500;
+}
+.armor-sheet .armor-location-group .armor-location-label {
+  text-align: center;
+  font-size: 1em;
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25));
+  border: 2px solid darkgrey;
+  border-radius: 3px;
+  padding: 1px 3px;
+  margin: 5px 0;
+}

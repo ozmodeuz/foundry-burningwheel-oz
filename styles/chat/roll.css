@@ -1,0 +1,113 @@
+.chat-message {
+  display: flex;
+}
+.chat-message hr {
+  width: 100%;
+}
+.chat-message .message-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.chat-message .message-title.shade-grey {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.chat-message .message-title.shade-black {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.chat-message .message-title.shade-white {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+}
+.chat-message .message-title.open-roll {
+  color: gold;
+}
+.chat-message div {
+  text-align: center;
+}
+.chat-message div.left-align {
+  text-align: left;
+}
+.chat-message div.right-align {
+  text-align: right;
+}
+.chat-message div.vertical-divider {
+  border: 0;
+  border-left: 1px solid #333;
+  border-right: 1px solid #ccc;
+  margin: 1px 5px;
+}
+.chat-message .roll-half-width {
+  width: 50%;
+  padding: 5px;
+  border: 1px black solid;
+  margin-bottom: -1px;
+}
+.chat-message .roll-full-width {
+  width: 100%;
+  padding: 3px 5px;
+  border: 1px black solid;
+  margin-bottom: -1px;
+}
+.chat-message .roll-full-width.roll-extra-info {
+  padding: 0;
+}
+.chat-message .roll-full-width.whitespace-pre {
+  white-space: pre-wrap;
+}
+.chat-message .roll-full-width.roll-title {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-weight: bold;
+}
+.chat-message .roll-dice, .chat-message .secondary-dice {
+  justify-content: center;
+}
+.chat-message .secondary-pool {
+  border-bottom: 1px solid black;
+}
+.chat-message .secondary-dice {
+  padding: 5px;
+}
+.chat-message .roll-die {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.25);
+  border: solid black 1px;
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin: 2px;
+  display: inline-block;
+}
+.chat-message .roll-die[data-success=true] {
+  color: green;
+  background-color: rgba(144, 238, 144, 0.25);
+}
+.chat-message .roll-Routine {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.chat-message .roll-Difficult {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.chat-message .roll-Challenging {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.chat-message .roll-success {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+.chat-message .roll-failure {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.chat-message .reroll-buttons .chat-reroll > button {
+  line-height: 1.5em;
+}
+.chat-message .reroll-buttons .chat-reroll > button.chat-fate-button, .chat-message .reroll-buttons .chat-reroll > button.chat-deeds-button {
+  flex: 1 1 45%;
+}
+.chat-message .reroll-buttons .chat-reroll > button.chat-deeds-button {
+  margin-right: -1px;
+}

@@ -1,0 +1,129 @@
+.ptgs {
+  display: grid;
+  grid-template-columns: 2fr repeat(16, 1fr);
+  row-gap: 5px;
+}
+.ptgs > div {
+  border: 1px solid black;
+}
+.ptgs select {
+  /* remove dropdown triangle for IE-10 */
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+  border: 0;
+}
+.ptgs select::-ms-expand {
+  display: none;
+}
+.ptgs .ptgs-top {
+  height: 2em;
+  text-align: center;
+}
+.ptgs .ptgs-top i.fas:hover {
+  color: red;
+}
+.ptgs .ptgs-mid {
+  height: 2em;
+  text-align: center;
+  background-color: darkgrey;
+}
+.ptgs .ptgs-scale {
+  height: 6em;
+  text-align: center;
+}
+.ptgs .ptgs-scale label.wound-clear {
+  display: block;
+  color: transparent;
+  width: 15px;
+  text-align: center;
+  margin: 1px auto 1px auto;
+}
+.ptgs .ptgs-scale label.wound-clear:hover {
+  color: red;
+}
+.ptgs .ptgs-scale input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+.ptgs .ptgs-scale label.wound-tick {
+  display: block;
+  background-color: #333333;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 15px;
+  height: 15px;
+  margin: 1px auto 1px auto;
+}
+.ptgs .ptgs-scale input[type=radio]:checked ~ label.wound-tick:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.ptgs .ptgs-scale input[type=radio]:checked ~ .wound-tick {
+  background-color: white;
+}
+.ptgs .ptgs-scale input[type=radio]:checked + .wound-tick {
+  background-color: #333333;
+}
+.ptgs .ptgs-obpenalty, .ptgs .ptgs-wounddice {
+  justify-content: space-between;
+}
+.ptgs .ptgs-obpenalty > button, .ptgs .ptgs-wounddice > button {
+  width: calc(100% - 6px);
+  margin: 1px 3px;
+  height: min-content;
+}
+.ptgs .ptgs-obpenalty > .ptgs-big-number, .ptgs .ptgs-wounddice > .ptgs-big-number {
+  font-size: 32px;
+  font-weight: bolder;
+  text-align: center;
+}
+.ptgs .ptgs-obpenalty input:checked + button, .ptgs .ptgs-wounddice input:checked + button {
+  background: linear-gradient(rgba(0, 128, 0, 0.05), rgba(0, 128, 0, 0.25));
+  border: 2px solid #005500;
+  color: #005500;
+}
+.ptgs .ptgs-obpenalty > input, .ptgs .ptgs-wounddice > input {
+  display: none;
+}
+.ptgs .ptgs-obpenalty {
+  height: 12em;
+  grid-column: 1/3;
+}
+.ptgs .ptgs-wounddice {
+  grid-column: 3/6;
+}
+.ptgs .ptgs-woundnotes1 h3, .ptgs .ptgs-woundnotes2 h3, .ptgs .ptgs-woundnotes3 h3 {
+  text-align: center;
+}
+.ptgs .ptgs-woundnotes1 input, .ptgs .ptgs-woundnotes2 input, .ptgs .ptgs-woundnotes3 input {
+  width: 35%;
+  height: 1.75em;
+  font-weight: bold;
+  text-align: center;
+}
+.ptgs .ptgs-woundnotes1 .recovery-label, .ptgs .ptgs-woundnotes2 .recovery-label, .ptgs .ptgs-woundnotes3 .recovery-label {
+  width: 60%;
+  text-align: center;
+  line-height: 2em;
+  font-weight: bolder;
+}
+.ptgs .ptgs-woundnotes1 textarea, .ptgs .ptgs-woundnotes2 textarea, .ptgs .ptgs-woundnotes3 textarea {
+  resize: none;
+  border: 0;
+  margin: auto;
+  height: 8em;
+}
+.ptgs .ptgs-woundnotes1 {
+  grid-column: 6/10;
+}
+.ptgs .ptgs-woundnotes2 {
+  grid-column: 10/14;
+}
+.ptgs .ptgs-woundnotes3 {
+  grid-column: 14/19;
+}
+.ptgs h3 {
+  text-align: center;
+  width: 100%;
+}

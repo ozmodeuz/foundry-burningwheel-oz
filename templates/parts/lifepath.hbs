@@ -1,0 +1,46 @@
+<div class="lifepath" draggable="true" data-id="{{this._id}}">
+    <div class="header">
+        <div class="title">
+            {{this.name}}
+        </div>
+        <div class="years">
+            {{this.data.time}}
+        </div>
+        <div class="resources">
+            {{this.data.resources}}
+        </div>
+        <div class="stat-boost">
+            {{{this.data.statString}}}
+        </div>
+        <div class="leads">
+            {{this.data.leads}}
+        </div>
+        <i class="fas fa-times" data-action="delete" data-id="{{this._id}}"></i>
+    </div>
+    <div class="lifepath-detail">
+        <label>Skills:</label>
+        {{#if this.data.skillList}}{{this.data.skillPoints}} Pts: {{this.data.skillList}}{{/if}}{{#if this.data.generalPoints}}{{#if this.data.skillList}};{{/if}} {{this.data.generalPoints}} Pts: General{{/if}}
+    </div>
+    <div class="lifepath-detail">
+        <label>Traits:</label>
+        {{this.data.traitPoints}} Pts: {{#if this.data.traitList}}{{this.data.traitList}}{{else}}&mdash;{{/if}}
+    </div>
+    {{#if this.data.restrictions}}
+    <div class="lifepath-detail">
+        <label>Restrictions:</label>
+        {{this.data.restrictions}}
+    </div>
+    {{/if}}
+    {{#if this.data.requirements}}
+    <div class="lifepath-detail">
+        <label>Requires:</label>
+        {{this.data.requirements}}
+    </div>
+    {{/if}}
+    {{#if this.data.note}}
+    <div class="lifepath-detail">
+        <label>Note:</label>
+        {{this.data.note}}
+    </div>
+    {{/if}}
+</div>

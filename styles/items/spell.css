@@ -1,0 +1,30 @@
+.spell-sheet .spell-sheet-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+  margin-bottom: 5px;
+}
+.spell-sheet .spell-sheet-entry input[type=number] {
+  -moz-appearance: textfield;
+}
+.spell-sheet .spell-sheet-entry input[type=number]::-webkit-outer-spin-button, .spell-sheet .spell-sheet-entry input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.spell-sheet .spell-setting-label {
+  font-weight: bold;
+}
+.spell-sheet .spell-weapon-toggle {
+  margin-bottom: -2px;
+}
+.spell-sheet .spell-weapon-toggle .spell-toggle-label {
+  border-radius: 2em 2em 0 0;
+  width: 8em;
+  display: inline-block;
+}
+.spell-sheet .spell-weapon-stats {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  border: 2px groove #f0f0e0;
+}

@@ -1,0 +1,51 @@
+.character .gear {
+  column-gap: 1px;
+  row-gap: 1px;
+}
+.character .gear > div i {
+  margin-bottom: 3px;
+}
+.character .gear .equipment-armor {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 255, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 255, 0.075);
+}
+.character .gear .equipment-armor:hover {
+  background-color: rgba(0, 0, 255, 0.15);
+}
+.character .gear .equipment-weapon {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(255, 0, 0, 0.075);
+}
+.character .gear .equipment-weapon:hover {
+  background-color: rgba(255, 0, 0, 0.15);
+}
+.character .gear .equipment-possession {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 165, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(255, 165, 0, 0.075);
+}
+.character .gear .equipment-possession:hover {
+  background-color: rgba(255, 165, 0, 0.15);
+}
+.character .gear .equipment-property {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 128, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 128, 0, 0.075);
+}
+.character .gear .equipment-property:hover {
+  background-color: rgba(0, 128, 0, 0.15);
+}

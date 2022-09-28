@@ -1,0 +1,490 @@
+.character.ctrl-modified button:enabled.modifiable {
+  background-color: rgba(0, 0, 139, 0.25);
+}
+.character.alt-modified button:enabled.modifiable {
+  background-color: rgba(136, 0, 0, 0.25);
+}
+.character.shift-modified button:enabled.modifiable {
+  background-color: rgba(0, 100, 0, 0.25);
+}
+.character h2 {
+  text-align: center;
+}
+.character h2.section-header {
+  display: flex;
+  margin-top: 0.75em;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.character h2.section-header:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.character h2.section-header > label {
+  flex: 1 1 100px;
+}
+.character h2.section-header > i {
+  flex: 0 0 1em;
+  margin: 2px 0 0 5px;
+}
+.character h2.section-header input.section-collapse:checked + i {
+  transform: rotate(-90deg);
+}
+.character h2.section-header .settings-gear {
+  font-size: 0.75em;
+  flex: 0 0 1em;
+  margin: 5px 5px 0 0;
+  color: grey;
+}
+.character h2.section-header .settings-gear:hover {
+  color: red;
+}
+.character h2.section-header .settings-checkbox:checked ~ .settings-gear {
+  color: black;
+}
+.character .character-header h2 {
+  margin-top: 0;
+  grid-column: 1/3;
+}
+.character .character-header .portrait {
+  width: 250px;
+  height: 250px;
+}
+.character .character-header .portrait img {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.character .character-header .section-index {
+  width: calc(100% - 255px);
+  margin-left: 5px;
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+}
+.character .character-header .section-index input {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+.character .character-header .section-index input[type=number] {
+  width: 100%;
+  padding: 3px 1px 3px 1px;
+  height: 24px;
+  -moz-appearance: textfield;
+}
+.character .character-header .section-index input[type=number]::-webkit-outer-spin-button, .character .character-header .section-index input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character .character-header .section-index .artha-points {
+  place-content: space-evenly;
+}
+.character .character-header .section-index .artha-points div {
+  background-color: transparent;
+}
+.character .character-header .section-index .artha-points:hover {
+  background-color: transparent;
+}
+.character .character-header .section-index .artha-points .artha-label {
+  font-size: 0.75em;
+  display: block;
+  width: 3em;
+  text-align: center;
+}
+.character .character-header .section-index .artha-points .artha-input {
+  border: 2px inset black;
+  border-bottom-color: grey;
+  border-right-color: grey;
+  border-radius: 0.75em;
+  height: 1.5em;
+  width: 1.5em;
+  font-size: 1.5em;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.character .character-header .section-index .artha-points .artha-input::-webkit-outer-spin-button, .character .character-header .section-index .artha-points .artha-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character .character-header .section-index .artha-points .artha-input:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.character .stats,
+.character .attributes,
+.character .skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+.character .stats div.rollable,
+.character .attributes div.rollable,
+.character .skills div.rollable {
+  margin: 1px;
+  padding: 1px 3px;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.25s;
+  background-color: rgba(0, 0, 0, 0.075);
+  height: min-content;
+}
+.character .stats div.rollable.wound-disabled,
+.character .attributes div.rollable.wound-disabled,
+.character .skills div.rollable.wound-disabled {
+  background-color: rgba(255, 0, 0, 0.15);
+}
+.character .stats div.rollable.wound-disabled:hover,
+.character .attributes div.rollable.wound-disabled:hover,
+.character .skills div.rollable.wound-disabled:hover {
+  background-color: rgba(255, 0, 0, 0.25);
+}
+.character .stats div.rollable.wound-disabled button.rollable,
+.character .attributes div.rollable.wound-disabled button.rollable,
+.character .skills div.rollable.wound-disabled button.rollable {
+  pointer-events: none;
+}
+.character .stats div.rollable:hover,
+.character .attributes div.rollable:hover,
+.character .skills div.rollable:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.character .stats div.rollable.can-advance,
+.character .attributes div.rollable.can-advance,
+.character .skills div.rollable.can-advance {
+  background-color: rgba(255, 165, 0, 0.25);
+}
+.character .stats div.rollable button,
+.character .attributes div.rollable button,
+.character .skills div.rollable button {
+  width: 2.25em;
+  height: 2em;
+  box-sizing: border-box;
+  padding: 0;
+  line-height: calc(2em - 3px);
+}
+.character .stats div.rollable input.exponent,
+.character .attributes div.rollable input.exponent,
+.character .skills div.rollable input.exponent {
+  -moz-appearance: textfield;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+  text-align: center;
+  flex: 0 0 2em;
+  height: 2em;
+  margin-left: 2px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.character .stats div.rollable input.exponent::-webkit-outer-spin-button, .character .stats div.rollable input.exponent::-webkit-inner-spin-button,
+.character .attributes div.rollable input.exponent::-webkit-outer-spin-button,
+.character .attributes div.rollable input.exponent::-webkit-inner-spin-button,
+.character .skills div.rollable input.exponent::-webkit-outer-spin-button,
+.character .skills div.rollable input.exponent::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character .stats div.rollable select.shade,
+.character .attributes div.rollable select.shade,
+.character .skills div.rollable select.shade {
+  /* remove dropdown triangle for IE-10 */
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+  border: 0;
+  height: 2em;
+  flex: 0 0 2em;
+  border: 1px solid black;
+  border-radius: 0;
+  text-align-last: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+.character .stats div.rollable select.shade::-ms-expand,
+.character .attributes div.rollable select.shade::-ms-expand,
+.character .skills div.rollable select.shade::-ms-expand {
+  display: none;
+}
+.character .stats input.rollable-name,
+.character .attributes input.rollable-name,
+.character .skills input.rollable-name {
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  padding: 1px 0;
+  font-weight: bold;
+}
+.character .stats .rollable-name,
+.character .attributes .rollable-name,
+.character .skills .rollable-name {
+  flex: 1 1;
+  margin: 0 1em 0 0;
+  font-size: 1.125em;
+  line-height: 1.75em;
+  font-weight: bold;
+}
+.character .stats .rollable-open-checkbox:checked + .rollable-open-toggle > label,
+.character .attributes .rollable-open-checkbox:checked + .rollable-open-toggle > label,
+.character .skills .rollable-open-checkbox:checked + .rollable-open-toggle > label {
+  background: linear-gradient(rgba(0, 128, 0, 0.05), rgba(0, 128, 0, 0.25));
+  border: 2px solid #005500;
+  color: #005500;
+}
+.character .stats .rollable-open-toggle,
+.character .attributes .rollable-open-toggle,
+.character .skills .rollable-open-toggle {
+  width: min-content;
+  display: inline-block;
+}
+.character .stats .rollable-open-toggle > label,
+.character .attributes .rollable-open-toggle > label,
+.character .skills .rollable-open-toggle > label {
+  font-size: 1em;
+  border-radius: 0.75em;
+  border: 2px groove #f0f0e0;
+  background-color: rgba(128, 128, 128, 0.15);
+  line-height: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  height: 1.75em;
+  line-height: 1.5em;
+  color: grey;
+}
+.character .stats .rollable-open-toggle > label:active,
+.character .attributes .rollable-open-toggle > label:active,
+.character .skills .rollable-open-toggle > label:active {
+  background-color: rgba(128, 128, 128, 0.25);
+}
+.character .stats .collapse-checkbox,
+.character .attributes .collapse-checkbox,
+.character .skills .collapse-checkbox {
+  display: none;
+}
+.character .stats .collapse-checkbox:checked ~ .collapsing-section,
+.character .attributes .collapse-checkbox:checked ~ .collapsing-section,
+.character .skills .collapse-checkbox:checked ~ .collapsing-section {
+  height: 0;
+  display: none;
+}
+.character .stats .collapse-label,
+.character .attributes .collapse-label,
+.character .skills .collapse-label {
+  margin-right: 5px;
+  height: 1.75em;
+  padding-top: 5px;
+  flex: 0 0 15px;
+}
+.character .stats .collapse-checkbox:checked + .collapse-label > i,
+.character .attributes .collapse-checkbox:checked + .collapse-label > i,
+.character .skills .collapse-checkbox:checked + .collapse-label > i {
+  transform: rotate(-90deg);
+}
+.character .stats .collapsing-section,
+.character .attributes .collapsing-section,
+.character .skills .collapsing-section {
+  width: 100%;
+}
+.character .stats .test-tracking,
+.character .attributes .test-tracking,
+.character .skills .test-tracking {
+  display: flex;
+}
+.character .stats .test-tracking label.progress-clear,
+.character .attributes .test-tracking label.progress-clear,
+.character .skills .test-tracking label.progress-clear {
+  display: block;
+  color: transparent;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  text-align: center;
+  margin-left: calc(15px/5);
+}
+.character .stats .test-tracking label.progress-clear:hover,
+.character .attributes .test-tracking label.progress-clear:hover,
+.character .skills .test-tracking label.progress-clear:hover {
+  color: red;
+}
+.character .stats .test-tracking input[type=radio],
+.character .attributes .test-tracking input[type=radio],
+.character .skills .test-tracking input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+.character .stats .test-tracking input[type=radio]:checked ~ label.progress-tick,
+.character .attributes .test-tracking input[type=radio]:checked ~ label.progress-tick,
+.character .skills .test-tracking input[type=radio]:checked ~ label.progress-tick {
+  background-color: white;
+}
+.character .stats .test-tracking input[type=radio]:checked ~ label.progress-tick:hover,
+.character .attributes .test-tracking input[type=radio]:checked ~ label.progress-tick:hover,
+.character .skills .test-tracking input[type=radio]:checked ~ label.progress-tick:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.character .stats .test-tracking input[type=radio]:checked + label.progress-tick,
+.character .attributes .test-tracking input[type=radio]:checked + label.progress-tick,
+.character .skills .test-tracking input[type=radio]:checked + label.progress-tick {
+  background-color: #333333;
+}
+.character .stats .test-tracking input[type=radio]:disabled ~ label.progress-tick,
+.character .attributes .test-tracking input[type=radio]:disabled ~ label.progress-tick,
+.character .skills .test-tracking input[type=radio]:disabled ~ label.progress-tick {
+  pointer-events: none;
+  opacity: 25%;
+}
+.character .stats .test-tracking label.progress-tick,
+.character .attributes .test-tracking label.progress-tick,
+.character .skills .test-tracking label.progress-tick {
+  display: block;
+  background-color: #333333;
+  border: 1px solid black;
+  border-radius: calc(15px/2);
+  width: 15px;
+  height: 15px;
+  margin-left: calc(15px/5);
+  margin-top: 1px;
+}
+.character .stats .test-tracking .test-title,
+.character .attributes .test-tracking .test-title,
+.character .skills .test-tracking .test-title {
+  width: 33%;
+}
+.character .stats .test-tracking .tests-needed,
+.character .attributes .test-tracking .tests-needed,
+.character .skills .test-tracking .tests-needed {
+  width: 1.5em;
+}
+.character .stats input[type=radio],
+.character .attributes input[type=radio],
+.character .skills input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+.character .stats .attribute-subrow,
+.character .attributes .attribute-subrow,
+.character .skills .attribute-subrow {
+  display: inline-block;
+}
+.character .stats .attribute-subrow label,
+.character .attributes .attribute-subrow label,
+.character .skills .attribute-subrow label {
+  font-size: 1.125em;
+  display: inline-block;
+  text-align: center;
+  margin-left: 20px;
+}
+.character .stats .stats-footer {
+  grid-column: 1/4;
+  justify-content: flex-end;
+}
+.character .stats .stats-footer label {
+  width: 8em;
+  font-size: 1.125em;
+  margin-right: 0.5em;
+  font-weight: bold;
+  text-align: right;
+}
+.character .stats .stats-footer input {
+  font-size: 1.125em;
+  border: 0;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+  width: 2em;
+  -moz-appearance: textfield;
+}
+.character .stats .stats-footer input::-webkit-outer-spin-button, .character .stats .stats-footer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character .attributes .attributes-derived {
+  grid-column: 1/4;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, 1fr);
+}
+.character .attributes .attributes-derived .attribute-label,
+.character .attributes .attributes-derived .debt-label {
+  font-size: 1.125em;
+  display: block;
+  width: 50%;
+}
+.character .attributes .attributes-derived .debt-label {
+  width: 30%;
+}
+.character .attributes .attributes-derived .attribute-value,
+.character .attributes .attributes-derived .attribute-text {
+  font-size: 1.125em;
+  border: 0;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+}
+.character .attributes .attributes-derived .attribute-value {
+  font-weight: bold;
+  width: 4em;
+}
+.character .attributes .attributes-derived .attribute-text {
+  width: 65%;
+  height: min-content;
+  border-radius: 0;
+}
+.character .attributes .attributes-derived .attribute-text input {
+  -moz-appearance: textfield;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  width: 2em;
+  border: 0;
+  text-align: center;
+}
+.character .attributes .attributes-derived .attribute-text input::-webkit-outer-spin-button, .character .attributes .attributes-derived .attribute-text input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character .right-floating {
+  grid-column: -2;
+}
+.character .right-floating:hover {
+  background-color: unset;
+}
+.character .right-floating > .add-button {
+  font-size: 1em;
+  border-radius: 0.75em;
+  border: 2px groove #f0f0e0;
+  background-color: rgba(0, 128, 0, 0.15);
+  line-height: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+  height: min-content;
+}
+.character .right-floating > .add-button:active {
+  background-color: rgba(0, 128, 0, 0.25);
+}
+.character .character-tabs {
+  margin-top: 10px;
+}
+.character .character-tabs .item {
+  width: 100%;
+  margin: 0 1px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #b5b3a4;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 28px;
+  font-family: "Signika", sans-serif;
+}
+.character .character-tabs .item :hover,
+.character .character-tabs .item :focus {
+  outline: none;
+  box-shadow: 0 0 5px red;
+}
+.character section.content div.tab {
+  display: none;
+}
+.character section.content div.tab.active {
+  display: block;
+}

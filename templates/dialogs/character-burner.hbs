@@ -1,0 +1,488 @@
+<form class="character-burner flex-row">
+    <h2>Character Burner Worksheet</h2>
+    <div class="flex-row burner-subtitle">
+        <div class="burner-label">Character Concept</div><input type="text" value="">
+        <div class="burner-label">Recommended # of Lifepaths</div><input type="number" name="data.lps" class="exponent" min="0" value="{{data.lps}}">
+        <div class="burner-label">Stock</div><input type="text" value="" name="stock">
+    </div>
+    <div class="lifepath-grid">
+        <div class="burner-section-header">2. Lifepaths</div>
+        <div class="burner-section-header">Time</div>
+        <div class="burner-section-header">Lead</div>
+        <div class="burner-section-header">Res.</div>
+        <div class="burner-section-header">Stat</div>
+        <div class="burner-section-header"></div>
+        <div class="burner-section-header">Skill</div>
+        <div class="burner-section-header">Gen.</div>
+        <div class="burner-section-header">Trait</div>
+        {{#each data.lifepaths as |lp key|}}
+            <input type="text" class="lifepath-input" value="{{lp.name}}" name="lifepathName" {{#if (eq key 0)}}placeholder="Born..."{{/if}}>
+            <input type="number" class="lifepath-input" name="time" value="{{lp.time}}">
+            <input type="number" class="lifepath-input" name="lead" value="{{lp.lead}}">
+            <input type="number" class="lifepath-input" name="resources" value="{{lp.resources}}">
+            <div class="inline-text"><label>M</label><input type="number" class="lifepath-input" name="mentalStat" value="{{lp.mentalStat}}"></div>
+            <div class="inline-text"><label>P</label><input type="number" class="lifepath-input" name="physicalStat" value="{{lp.physicalStat}}"></div>
+            <input type="number" class="lifepath-input" name="skillPts" value="{{lp.skillPts}}">
+            <input type="number" class="lifepath-input" name="generalSkillPts" value="{{lp.generalSkillPts}}">
+            <input type="number" class="lifepath-input" name="traitPts" value="{{lp.traitPts}}">
+        {{/each}}
+        <div class="lifepath-grid-totals">Totals... </div>
+        <input type="number" disabled class="lifepath-grid-totals lifepath-input" name="timeTotal" value="0">
+        <input type="number" disabled class="lifepath-grid-totals lifepath-input" name="leadTotal" value="0">
+        <input type="number" disabled class="lifepath-grid-totals lifepath-input" name="resourcesTotal" value="0">
+        <div class="inline-text"><label>M</label><input type="number" disabled class="lifepath-grid-totals lifepath-input" name="mentalStatTotal" value="0"></div>
+        <div class="inline-text"><label>P</label><input type="number" disabled class="lifepath-grid-totals lifepath-input" name="physicalStatTotal" value="0"></div>
+        <input type="number" disabled class="lifepath-grid-totals lifepath-input" name="skillPtsTotal" value="0">
+        <input type="number" disabled class="lifepath-grid-totals lifepath-input" name="generalSkillPtsTotal" value="0">
+        <input type="number" disabled class="lifepath-grid-totals lifepath-input" name="traitPtsTotal" value="0">
+    </div>
+    <div class="base-stats flex-column burner-right-third">
+        <div class="burner-grid col-2">
+            <div class="burner-label">3. Age</div>
+            <input disabled type="number" class="exponent" name="ageTotal" value="0">
+        </div>
+        <div class="flex-column">
+            <div class="burner-label">4. Stats </div>
+            <div class="burner-label">The Age Chart</div>
+            <div class="burner-grid col-2">
+                <div>Mental Age</div>
+                <select name="mentalPool">
+                    {{#each ageTable as |ageGroup key|}}
+                    <optgroup label="{{key}}">
+                        {{#each ageGroup as |age|}}
+                        <option value="{{age.mental}}">{{age.label}} Years - {{age.mental}} Pts.</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                </select>
+                <div>Physical Age</div>
+                <select name="physicalPool">
+                    {{#each ageTable as |ageGroup key|}}
+                    <optgroup label="{{key}}">
+                        {{#each ageGroup as |age|}}
+                        <option value="{{age.physical}}">{{age.label}} Years - {{age.physical}} Pts.</option>
+                        {{/each}}
+                    </optgroup>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="burner-grid col-2">
+                <div class="burner-label">Mental Pool</div>
+                <input disabled type="hidden" class="exponent" name="mentalPoolTotal" value="5">
+                <input disabled type="hidden" class="exponent" name="mentalPoolSpent" value="2">
+                <input disabled type="number" class="exponent" name="mentalPoolLeft" value="3">
+                <div class="stat-input-box">
+                    <label>Will</label>
+                    <select name="willShadeSpent">
+                        <option value="0">B</option>
+                        <option value="5">G</option>
+                        <option value="10">W</option>
+                    </select>
+                    <input type="number" class="exponent" name="willSpent" value="1" min="1">
+                </div>
+                <div class="stat-input-box">
+                    <label>Perception</label>
+                    <select name="perceptionShadeSpent">
+                        <option value="0">B</option>
+                        <option value="5">G</option>
+                        <option value="10">W</option>
+                    </select>
+                    <input type="number" class="exponent" name="perceptionSpent" value="1" min="1">
+                </div>
+                <div class="burner-label">Physical Pool</div>
+                <input disabled type="hidden" class="exponent" name="physicalPoolTotal" value="10">
+                <input disabled type="hidden" class="exponent" name="physicalPoolSpent" value="4">
+                <input disabled type="number" class="exponent" name="physicalPoolLeft" value="6">
+                <div class="stat-input-box">
+                    <label>Power</label>
+                    <select name="powerShadeSpent">
+                        <option value="0">B</option>
+                        <option value="5">G</option>
+                        <option value="10">W</option>
+                    </select>
+                    <input type="number" class="exponent" name="powerSpent" value="1" min="1">
+                </div>
+                <div class="stat-input-box">
+                    <label>Forte</label>
+                    <select name="forteShadeSpent">
+                        <option value="0">B</option>
+                        <option value="5">G</option>
+                        <option value="10">W</option>
+                    </select>
+                    <input type="number" class="exponent" name="forteSpent" value="1" min="1">
+                </div>
+                <div class="stat-input-box">
+                    <label>Agility</label>
+                    <select name="agilityShadeSpent">
+                        <option value="0">B</option>
+                        <option value="5">G</option>
+                        <option value="10">W</option>
+                    </select>
+                    <input type="number" class="exponent" name="agilitySpent" value="1" min="1">
+                </div>
+                <div class="stat-input-box">
+                    <label>Speed</label>
+                    <select name="speedShadeSpent">
+                        <option value="0">B</option>
+                        <option value="5">G</option>
+                        <option value="10">W</option>
+                    </select>
+                    <input type="number" class="exponent" name="speedSpent" value="1" min="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="burner-skills-section">
+        <div class="skills-header">
+            <input type="hidden" name="combinedSkillPts" value="0">
+            <input type="hidden" name="skillPtsSpent" value="0">
+            <div class="burner-section-header flex-row"><div>5. Skills</div><input type="number" disabled class="exponent" name="skillPtsLeft" value="0"><div>Pts. left</div></div>
+            <div class="burner-section-header">Roots</div>
+            <div class="burner-section-header">&nbsp;</div>
+            <div class="burner-section-header" title="Required Skill">Req</div>
+            <div class="burner-section-header" title="Opened skill">Opn</div>
+            <div class="burner-section-header" title="Training Skill (costs 2 points to open)">Tr</div>
+            <div class="burner-section-header" title="Magical Skill (costs 2 points to open)">Mg</div>
+            <div class="burner-section-header" title="Number of Advances">Adv.</div>
+            <div class="burner-section-header" title="Starting Shade">Shd.</div>
+            <div class="burner-section-header" title="Final Exponent">Exp</div>
+            <div class="burner-section-header"><i class="fas fa-question-circle" title="Status of loading skill from compendium."></i></div>
+        </div>
+        {{#each data.skills as |skill|}}
+        <div class="skills-grid">
+            <select name="skillName" value="">
+                <option value=""></option>
+                {{#each ../data.skillNames as |name|}}
+                <option value="{{name}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <select name="skillRoot1" value="perception">
+                <option value="will">Will</option>
+                <option value="perception">Perception</option>
+                <option value="power">Power</option>
+                <option value="forte">Forte</option>
+                <option value="agility">Agility</option>
+                <option value="speed">Speed</option>
+                <option value="custom1">Custom Attribute 1</option>
+                <option value="custom2">Custom Attribute 2</option>
+            </select>
+            <select name="skillRoot2" value="">
+                <option value=""></option>
+                <option value="will">Will</option>
+                <option value="perception">Perception</option>
+                <option value="power">Power</option>
+                <option value="forte">Forte</option>
+                <option value="agility">Agility</option>
+                <option value="speed">Speed</option>
+                <option value="custom1">Custom Attribute 1</option>
+                <option value="custom2">Custom Attribute 2</option>
+            </select>
+            <input type="checkbox" name="skillRequired">
+            <input type="checkbox" name="skillOpened">
+            <input type="checkbox" name="skillTraining">
+            <input type="checkbox" name="skillMagic">
+            <input type="number" name="skillAdvances" value="0">
+            <select class="shade" name="skillShade">
+                <option value="0">B</option>
+                <option value="5">G</option>
+                <option value="10">W</option>
+            </select>
+            <input type="number" disabled name="skillExponent" value="0">
+            <div class="load-status none">
+                <i class="fas fa-ellipsis-h" title="Waiting for name of skill to be entered."></i>
+                <i class="fas fa-question-circle" title="No matching skill found. Will create a new skill when worksheet is submitted."></i>
+                <i class="fas fa-spinner"></i>
+                <i class="fas fa-check-circle" title="Found skill in one of the compendiums. Will load this skill when worksheet is submitted."></i>
+            </div>
+            <input type="hidden" name="skillId">
+            <input type="hidden" name="skillShadeRefund" value="0">
+            <input type="hidden" name="skillPtsWorth" value="0">
+        </div>
+        {{/each}}
+    </div>
+    <div class="burner-right-third flex-column">
+        <div class="burner-traits-grid">
+            <input type="hidden" name="traitPtsSpent">
+            <div class="burner-section-header flex-row"><div>6. Traits</div><input type="number" disabled class="exponent" name="traitPtsLeft" value="0"><div>left</div></div>
+            <div class="burner-section-header">Type</div>
+            <div class="burner-section-header">Req</div>
+            <div class="burner-section-header">Taken</div>
+            <div class="burner-section-header">Cost</div>
+            <div class="burner-section-header"><i class="fas fa-question-circle" title="Status of loading trait from compendium."></i></div>
+        </div>
+        {{#each data.traits as |trait|}}
+        <div class="burner-traits-grid">
+            <input type="hidden" name="traitId">
+            <select name="traitName" value="">
+                <option value=""></option>
+                {{#each ../data.traitNames as |traitGroup|}}
+                <optgroup label="{{@key}}">
+                    {{#each traitGroup as |t|}}
+                    <option value="{{t.name}}">{{t.label}}</option>
+                    {{/each}}
+                </optgroup>
+                {{/each}}
+            </select>
+            <select name="traitType">
+                <option value="character">Char</option>
+                <option value="die">Die</option>
+                <option value="call-on">C-o</option>
+            </select>
+            <input type="checkbox" name="traitReq">
+            <input type="checkbox" name="traitTaken">
+            <input type="number" name="traitCost" value="0">
+            <div class="load-status none">
+                <i class="fas fa-ellipsis-h" title="Waiting for name of trait to be entered."></i>
+                <i class="fas fa-question-circle" title="No matching trait found. Will create a new trait when worksheet is submitted."></i>
+                <i class="fas fa-spinner"></i>
+                <i class="fas fa-check-circle" title="Found trait in one of the compendiums. Will load this trait when worksheet is submitted."></i>
+            </div>
+        </div>
+        {{/each}}
+        <div class="burner-attributes-section burner-grid col-2">
+            <div class="burner-label">7. Attributes</div><div></div>
+            <div class="stat-input-box">
+                <label>Health</label>
+                <select name="healthShade">
+                    <option value="B">B</option>
+                    <option value="G">G</option>
+                    <option value="W">W</option>
+                </select>
+                <input type="number" class="exponent" name="healthStat" value="0" min="1">
+            </div>
+            <div class="rules-text">
+                Starts as the average of Power and Forte. Further modified by the questions in the rulebook (Pg. 91).
+            </div>
+            <div class="stat-input-box">
+                <label>Steel</label>
+                <select name="steelShade">
+                    <option value="B">B</option>
+                    <option value="G">G</option>
+                    <option value="W">W</option>
+                </select>
+                <input type="number" class="exponent" name="steelStat" value="3" min="1">
+            </div>
+            <div class="rules-text">
+                Starts at B3. Further modified by the questions in the rulebook (Pg. 91).
+                5 Yes answers may be spent for gray shade steel.
+            </div>
+            <div class="stat-input-box">
+                <input type="text" name="custom1Name">
+                <select name="custom1Shade">
+                    <option value="B">B</option>
+                    <option value="G">G</option>
+                    <option value="W">W</option>
+                </select>
+                <input type="number" class="exponent" name="custom1Spent" value="1" min="1">
+            </div>
+            <div class="rules-text">
+                Some characters gain access to emotional attributes. Faith, Greed, Grief, Hatred, etc.
+                Note your starting exponent and shade here.
+            </div>
+            <div class="stat-input-box">
+                <input type="text" name="custom2Name">
+                <select name="custom2Shade">
+                    <option value="B">B</option>
+                    <option value="G">G</option>
+                    <option value="W">W</option>
+                </select>
+                <input type="number" class="exponent" name="custom2Spent" value="1" min="1">
+            </div>
+            <div class="rules-text">
+            </div>
+        </div>
+    </div>
+
+    <div class="burner-resources burner-grid col-3">
+        <input type="hidden" name="resourcePointsSpent" value="0">
+        <div class="burner-label">
+            8. Resource Points <input type="number" disabled name="resourcePointsLeft" class="burner-inline-total" value="0"> Points left
+        </div><div></div><div class="burner-label">9. Resources and Circles</div>
+        <div>
+            <div class="burner-property">
+                <div class="burner-section-header">Property<input type="number" disabled class="burner-inline-total" name="propertySpent" value="0">Spent</div>
+                <div class="burner-section-header">Cost</div>
+                <div class="burner-section-header"><i class="fas fa-question-circle" title="Status of loading property from compendium."></i></div>
+            </div>
+            {{#each data.property}}
+            <div class="burner-property">
+                <input type="hidden" name="propertyId">
+                <select name="propertyName">
+                    <option value=""></option>
+                    {{#each ../data.propertyNames as |name|}}
+                    <option value="{{name}}">{{name}}</option>
+                    {{/each}}
+                </select>
+                <input type="number" name="propertyCost" value="0" min="0">
+                <div class="load-status none">
+                    <i class="fas fa-ellipsis-h" title="Waiting for name of trait to be entered."></i>
+                    <i class="fas fa-question-circle" title="No matching trait found. Will create a new trait when worksheet is submitted."></i>
+                    <i class="fas fa-spinner"></i>
+                    <i class="fas fa-check-circle" title="Found trait in one of the compendiums. Will load this trait when worksheet is submitted."></i>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div>
+            <div class="burner-reputations">
+                <div class="burner-section-header">Reputations/Affiliations<input type="number" disabled class="burner-inline-total" name="reputationSpent" value="0"></div>
+                <div class="burner-section-header" title="Reputation or Affiliation?">R/A</div>
+                <div class="burner-section-header">Dice</div>
+                <div class="burner-section-header">Cost</div>
+            </div>
+            {{#each data.reputations}}
+            <div class="burner-reputations">
+                <input type="text" name="reputationName">
+                <input id="burner-rel-{{@key}}" type="checkbox" name="reputationType" class="hidden burner-rel-checkbox">
+                <label for="burner-rel-{{@key}}" class="burner-rel-aff">A</label>
+                <label for="burner-rel-{{@key}}" class="burner-rel-rep">R</label>
+                <input type="number" name="reputationDice" min="0" max="3" value="0">
+                <input type="number" disabled name="reputationCost" min="0" value="0">
+            </div>
+            {{/each}}
+        </div>
+        <div class="burner-grid col-2">
+            <div class="stat-input-box">
+                <label>Resources</label>
+                <select name="resourcesShade">
+                    <option value="B">B</option>
+                    <option value="G">G</option>
+                    <option value="W">W</option>
+                </select>
+                <input type="number" class="exponent" name="resourcesStat" value="0" min="0">
+            </div>
+            <div class="rules-text">
+                Divide resource points spent on property, affiliations, and reputations by 15.
+                (Spent <input disabled type="number" name="resourceExponentAmount" value="0" class="burner-inline-total">)
+            </div>
+            <div class="stat-input-box">
+                <label>Circles</label>
+                <select name="circlesShade">
+                    <option value="B">B</option>
+                    <option value="G">G</option>
+                    <option value="W">W</option>
+                </select>
+                <input type="number" class="exponent" name="circlesStat" value="1" min="1">
+            </div>
+            <div class="rules-text">
+                Starts at half of Will. Uses Will shade. If you spend more than 50 points on relationships or
+                property, increase exponent by 1. (Spent <input disabled type="number" name="circlesExponentBonus" value="0" class="burner-inline-total">)
+            </div>
+        </div>
+    </div>
+    <div class="burner-resources burner-grid col-2">
+        <div>
+            <div class="burner-relationships">
+                <div class="burner-section-header">Relationships <input type="number" disabled class="burner-inline-total" name="relationshipsSpent" value="0"> Pts. Spent</div>
+                <div class="burner-section-header">Cost</div>
+            </div>
+            {{#each data.relationships}}
+            <div class="burner-relationships">
+                <div class="burner-relationship-info flex-row">
+                    <input name="relationshipName" class="rel-name">
+                    Power
+                    <select name="relPow">
+                        <option value="5">Minor</option>
+                        <option value="10">Important</option>
+                        <option value="15">Powerful</option>
+                    </select>
+                    Related?
+                    <select name="relFam">
+                        <option value="0">No</option>
+                        <option value="-2">Immediate</option>
+                        <option value="-1">Other</option>
+                    </select>
+                    <input id="rel-rom-{{@key}}" type="checkbox" name="relRom" value="-2">
+                    <label for="rel-rom-{{@key}}">Romantic</label>
+                    <input id="rel-for-{{@key}}" type="checkbox" name="relFor" value="-1">
+                    <label for="rel-for-{{@key}}">Forbidden</label>
+                    <input id="rel-hat-{{@key}}" type="checkbox" name="relHat" value="-2">
+                    <label for="rel-hat-{{@key}}">Hateful</label>
+                </div>
+                <input type="number" disabled name="relationshipCost" value="0">
+            </div>
+            {{/each}}
+        </div>
+        <div>
+            <div class="burner-gear">
+                <div class="burner-section-header">Other Gear, Equipment, and Spells<input type="number" disabled value="0" class="burner-inline-total" name="gearSpent"></div>
+                <div class="burner-section-header">Type</div>
+                <div class="burner-section-header">Cost</div>
+                <div class="burner-section-header"><i class="fas fa-question-circle" title="Status of loading item from compendium."></i></div>
+            </div>
+            {{#each data.gear}}
+            <div class="burner-gear">
+                <input type="hidden" name="gearId" value="">
+                <select name="itemName">
+                    <option value=""></option>
+                    <optgroup label="Armor">
+                        {{#each ../data.armorNames as |s|}}
+                        <option value="{{s.name}}">{{s.label}}</option>
+                        {{/each}}
+                    </optgroup>
+                    <optgroup label="Possessions">
+                        {{#each ../data.possessionNames as |s|}}
+                        <option value="{{s.name}}">{{s.label}}</option>
+                        {{/each}}
+                    </optgroup>
+                    <optgroup label="Spells">
+                        {{#each ../data.spellNames as |s|}}
+                        <option value="{{s.name}}">{{s.label}}</option>
+                        {{/each}}
+                    </optgroup>
+                    <optgroup label="Weapons">
+                        {{#each ../data.weaponNames as |s|}}
+                        <option value="{{s.name}}">{{s.label}}</option>
+                        {{/each}}
+                    </optgroup>
+                </select>
+                <select name="itemType">
+                    <option value="possession">Possession</option>
+                    <option value="melee weapon">Melee Weapon</option>
+                    <option value="ranged weapon">Ranged Weapon</option>
+                    <option value="armor">Armor</option>
+                    <option value="spell">Spell</option>
+                </select>
+                <input type="number" name="itemCost" value="0">
+                <div class="load-status none">
+                    <i class="fas fa-ellipsis-h" title="Waiting for name of item to be entered."></i>
+                    <i class="fas fa-question-circle" title="No matching item found. Will create a new item when worksheet is submitted."></i>
+                    <i class="fas fa-spinner"></i>
+                    <i class="fas fa-check-circle" title="Found item in one of the compendiums. Will load this item when worksheet is submitted."></i>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="burner-settings burner-grid">
+        <div class="burner-label whole-row">9a. A few sheet level settings...</div>
+        <div class="pill-toggle">
+            <input type="checkbox" id="armor-trained-check" name="settingArmorTrained">
+            <label for="armor-trained-check">Armor Trained</label>
+        </div>
+        <div>Select this if the character has received armor training.</div>
+        <div class="pill-toggle">
+            <input type="checkbox" id="tough-check" name="settingTough">
+            <label for="tough-check">Round up Mortal Wound</label>
+        </div>
+        <div>Select this if the character rounds up when factoring mortal wound such as from the Tough trait.</div>
+        <div class="pill-toggle">
+            <input type="checkbox" id="reflex-check" name="settingReflex">
+            <label for="reflex-check" >Round up Reflexes</label>
+        </div>
+        <div>Select this if the character rounds up when factoring reflexes such as from the Quickened Pulse trait.</div>
+        <div class="pill-toggle">
+            <input type="checkbox" id="numb-check" name="settingNumb">
+            <label for="numb-check">Ignore Superficial</label>
+        </div>
+        <div>Select this if the character ignores superficial wounds such as from the numb trait.</div>
+    </div>
+    <div class="burner-finishing burner-right-third">
+        <div class="burner-label">10. Physical Tolerances</div>
+        <div>Physical tolerances will be calculated automatically once this sheet is submitted, but do check the PTGS on the sheet to make sure things are correct.</div>
+        <div class="burner-label">11. Beliefs and Instincts</div>
+        <div>Once the data is transferred over, fill out the beliefs and instincts are filled out. Write some good ones!</div>
+        <div class="burner-label">12. Name them and you're finished!</div>
+    </div>
+    <button class="submit-burner-button" name="finish-burn">Complete Character Burning</button>
+</form>

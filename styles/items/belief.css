@@ -1,0 +1,25 @@
+.artha-spent label {
+  line-height: 2em;
+  vertical-align: middle;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.artha-spent input {
+  border: 2px inset black;
+  border-bottom-color: grey;
+  border-right-color: grey;
+  border-radius: 0.75em;
+  height: 1.5em;
+  width: 1.5em;
+  font-size: 1.5em;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.artha-spent input::-webkit-outer-spin-button, .artha-spent input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.artha-spent input:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}

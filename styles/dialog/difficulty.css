@@ -1,0 +1,156 @@
+.difficulty-dialog {
+  width: 5em;
+  position: fixed;
+  bottom: 10px;
+  right: 310px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-image: url("/ui/denim075.png");
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.difficulty-dialog .roll-mods {
+  height: 3em;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.difficulty-dialog .roll-mods .pill-toggle {
+  flex: 1;
+  height: 1.5em;
+}
+.difficulty-dialog .roll-mods .pill-toggle.s-pool label {
+  background-color: black;
+  border-radius: 2px;
+  color: blue;
+  border: 2px solid #000077;
+}
+.difficulty-dialog .roll-mods .pill-toggle.s-pool input:checked + label {
+  background: linear-gradient(rgba(0, 0, 255, 0.25), rgba(0, 0, 255, 0.75));
+  border: 2px solid blue;
+  color: lightblue;
+}
+.difficulty-dialog .roll-mods .pill-toggle.s-pool input:focus + label {
+  border-color: blue;
+}
+.difficulty-dialog .roll-mods .pill-toggle.c-diff label {
+  background-color: black;
+  border-radius: 2px;
+  color: green;
+  border: 2px solid #005500;
+}
+.difficulty-dialog .roll-mods .pill-toggle.c-diff input:checked + label {
+  background: linear-gradient(rgba(0, 128, 0, 0.25), rgba(0, 128, 0, 0.75));
+  border: 2px solid green;
+  color: lightgreen;
+}
+.difficulty-dialog .roll-mods .pill-toggle.c-diff input:focus + label {
+  border-color: green;
+}
+.difficulty-dialog .roll-mods .pill-toggle.help label {
+  background-color: black;
+  border-radius: 2px;
+  color: red;
+  border: 2px solid #880000;
+}
+.difficulty-dialog .roll-mods .pill-toggle.help input:checked + label {
+  background: linear-gradient(rgba(255, 0, 0, 0.25), rgba(255, 0, 0, 0.75));
+  border: 2px solid red;
+  color: #FFFFaa;
+}
+.difficulty-dialog .roll-mods .pill-toggle.help input:focus + label {
+  border-color: red;
+}
+.difficulty-dialog .roll-mods .pill-toggle.ext-test {
+  flex: 0 0 100%;
+}
+.difficulty-dialog .roll-mods .pill-toggle.ext-test label {
+  background-color: black;
+  border-radius: 2px;
+  color: red;
+  border: 2px solid #880000;
+}
+.difficulty-dialog .roll-mods .pill-toggle.ext-test input:checked + label {
+  background: linear-gradient(rgba(255, 0, 0, 0.25), rgba(255, 0, 0, 0.75));
+  border: 2px solid red;
+  color: #FFFFaa;
+}
+.difficulty-dialog .roll-mods .pill-toggle.ext-test input:focus + label {
+  border-color: red;
+}
+.difficulty-dialog .obstacle {
+  height: 4.5em;
+  display: flex;
+  flex-direction: column;
+}
+.difficulty-dialog input, .difficulty-dialog .number {
+  flex: 1;
+  color: white;
+  line-height: 100%;
+  font-size: 3em;
+}
+.difficulty-dialog .label {
+  flex: 0 0 1em;
+}
+
+.extended-test {
+  width: 12em;
+  position: fixed;
+  top: 10px;
+  right: 320px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-image: url("/ui/denim075.png");
+  color: white;
+  padding: 3px;
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.extended-test button {
+  height: 15px;
+  line-height: 12px;
+  font-size: 12px;
+  padding: 2px;
+  background-color: rgba(136, 0, 0, 0.25);
+  border: 1px solid #FFFFaa;
+  color: #FFFFaa;
+  transition: background-color 0.25s;
+  cursor: pointer;
+}
+.extended-test button:hover {
+  background-color: #880000;
+}
+.extended-test .test-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+  border-bottom: 2px groove #FFFFaa;
+  margin-bottom: 5px;
+}
+.extended-test .advancement .group-header {
+  font-weight: bold;
+  border-bottom: 1px solid #FFFFaa;
+}
+.extended-test .advancement .entry .title {
+  flex: 1;
+  margin-left: 5px;
+  transition: background-color 0.25s;
+}
+.extended-test .advancement .entry .title:hover {
+  background-color: rgba(136, 0, 0, 0.25);
+  cursor: pointer;
+}
+.extended-test .advancement .entry .difficulty {
+  flex: 0 0 12px;
+}
+.extended-test .advancement .entry button.action {
+  flex: 0 0 15px;
+  width: 15px;
+  border: 0;
+}

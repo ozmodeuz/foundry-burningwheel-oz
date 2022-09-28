@@ -1,0 +1,64 @@
+<div class="gm-difficulty">
+    <div class="difficulty-dialog">
+        <div class="roll-mods">
+            <div class="pill-toggle ext-test">
+                <input type="checkbox" id="gm-ext-test" name="extendedTest" {{checked extendedTest}} {{#if editable}}{{else}} disabled {{/if}}>
+                <label for="gm-ext-test" title="Change to extended test mode.">Extended Test</label>
+            </div>
+            <div class="pill-toggle s-pool">
+                <input type="checkbox" id="gm-diff-sp" name="splitPool" {{checked splitPool}}>
+                <label for="gm-diff-sp" title="Offer to split dice into a secondary pool">S/P</label>
+            </div>
+            <div class="pill-toggle c-diff">
+                <input type="checkbox" id="gm-diff-custom" name="customDiff" {{checked customDiff}}>
+                <label for="gm-diff-custom" title="Force a player set custom difficulty">CST</label>
+            </div>
+            <div class="pill-toggle help">
+                <input type="checkbox" id="gm-diff-help" name="help" {{checked help}}>
+                <label for="gm-diff-help" title="Provide Helping Dice">HLP</label>
+            </div>
+        </div>
+        {{#if showDifficulty}}
+        <div class="obstacle">
+            <div class="label">Obstacle</div>
+            {{#if editable}}
+            <input class="difficultyInput" value="{{difficulty}}" type="number">
+            {{else}}
+            <div class="number">
+                {{difficulty}}
+            </div>
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+    {{#if extendedTest}}
+    <div class="extended-test">
+        {{#if editable}}
+        <button class="full-width" data-action="clear">Clear</button>
+        {{/if}}
+        <div class="test-title">Extended Test</div>
+        {{#each actorGroups as |ah|}}
+        <div class="advancement">
+            <div class="group-header">{{ah.name}}</div>
+            {{#each ah.advancements as |a idx|}}
+            <div class="entry flex-row">
+                {{#if ../../editable}}
+                {{#if a.skillId}}
+                <div class="title" data-action="grant" data-actor-id="{{../id}}" data-skill-id="{{a.skillId}}" data-difficulty="{{a.difficulty}}" data-title="{{a.title}}">{{a.title}}</div>
+                {{else}}
+                <div class="title" data-action="grant" data-actor-id="{{../id}}" data-path="{{a.path}}" data-difficulty="{{a.difficulty}}" data-title="{{a.title}}">{{a.title}}</div>
+                {{/if}}
+                {{else}}
+                <div class="title">{{a.title}}</div>
+                {{/if}}
+                <div class="difficulty">{{a.difficulty}}</div>
+                {{#if ../../editable}}
+                <button class="action" data-action="clearEntry" data-actor-id="{{../id}}" data-index="{{idx}}"><i class="fas fa-times"></i></button>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>

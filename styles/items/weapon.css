@@ -1,0 +1,18 @@
+.melee-weapon-sheet .weapon-attack-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 2.5fr 15px;
+  column-gap: 3px;
+}
+.melee-weapon-sheet .weapon-attack-row .attack-grid-header {
+  font-weight: bold;
+}
+.melee-weapon-sheet .weapon-attack-row .exponent {
+  -moz-appearance: textfield;
+}
+.melee-weapon-sheet .weapon-attack-row .exponent::-webkit-outer-spin-button, .melee-weapon-sheet .weapon-attack-row .exponent::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.melee-weapon-sheet .weapon-attack-row i:hover {
+  color: red;
+}

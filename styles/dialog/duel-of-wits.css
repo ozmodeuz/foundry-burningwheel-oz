@@ -1,0 +1,90 @@
+.dow input[type=number] {
+  width: 2em;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.dow input[type=number]::-webkit-outer-spin-button, .dow input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dow .dow-side {
+  width: 50%;
+}
+.dow .dow-side .participant-name {
+  min-height: 1.5em;
+}
+.dow .dow-side textarea {
+  resize: none;
+  height: 8em;
+}
+.dow .dow-side select {
+  max-width: 100%;
+}
+.dow .dow-resets {
+  width: 100%;
+  height: min-content;
+}
+.dow .dow-resets .reset-option {
+  font-size: 1em;
+  border-radius: 0.75em;
+  border: 2px groove #f0f0e0;
+  background-color: rgba(255, 215, 0, 0.15);
+  line-height: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+}
+.dow .dow-resets .reset-option:active {
+  background-color: rgba(255, 215, 0, 0.25);
+}
+.dow .dow-volleys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  text-align: center;
+}
+.dow .dow-volleys .dow-participant .participant-name {
+  font-weight: bold;
+}
+.dow .dow-volleys .dow-participant img.dow-portrait {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  height: 80px;
+  border: 0;
+  object-fit: cover;
+}
+.dow .dow-volleys .dow-participant select {
+  width: calc(100% - 36px);
+}
+.dow .dow-volleys .dow-participant button.dow-roll {
+  width: 30px;
+  padding: 0;
+  height: 28px;
+}
+.dow .dow-volleys .dow-volley .card-back, .dow .dow-volleys .dow-volley .action-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 150px;
+  border: 3px solid #800;
+  color: #800;
+  background: linear-gradient(#eee67e, #aa9f00);
+  border-radius: 10px;
+  text-align: center;
+}
+.dow .dow-volleys .dow-volley .card-back {
+  line-height: 150px;
+  font-size: 5em;
+}
+.dow .dow-volleys .dow-volley .action-card {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dow .pill-toggle > input[type=checkbox]:checked + label {
+  background: linear-gradient(#eee67e, #aa9f00);
+  border: 2px solid #880000;
+  color: #880000;
+}

@@ -1,0 +1,53 @@
+input.item-sheet-name {
+  border: 0;
+  border-radius: 0;
+  font-size: 2em;
+  font-weight: bolder;
+  height: 1.25em;
+  border-bottom: 2px groove lightpink;
+  margin-bottom: 0.5em;
+  flex: 1 1;
+}
+
+img.item-image {
+  flex: 0 0 3em;
+  height: 3em;
+  border: 0;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.item-form-group {
+  display: grid;
+  grid-template-columns: repeat(4, calc(25% - 5px));
+  column-gap: 5px;
+  row-gap: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: min-content;
+}
+.item-form-group .item-setting-label {
+  font-weight: bold;
+  line-height: 1.75em;
+}
+.item-form-group .item-setting-toggle {
+  font-size: 1em;
+  border-radius: 0.75em;
+  border: 2px groove #f0f0e0;
+  background-color: rgba(128, 128, 128, 0.15);
+  line-height: 1.5em;
+  padding: 0 0.5em;
+  text-align: center;
+  height: min-content;
+}
+.item-form-group .item-setting-toggle:active {
+  background-color: rgba(128, 128, 128, 0.25);
+}
+.item-form-group .item-setting-checkbox:checked + .item-setting-toggle {
+  background: linear-gradient(rgba(0, 128, 0, 0.05), rgba(0, 128, 0, 0.25));
+  border: 2px solid #005500;
+  color: #005500;
+}
+.item-form-group .triple-wide {
+  grid-column: span 3;
+}
